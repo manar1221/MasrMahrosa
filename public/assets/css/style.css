@@ -1,0 +1,1384 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap');
+
+:root{
+   --main-color:#8e44ad;
+   --red:#e74c3c;
+   --orange:#f39c12;
+   --light-color:#888;
+   --light-bg:#eee;
+   --black:#2c3e50;
+   --white:#fff;
+   --border:.1rem solid rgba(0,0,0,.2);
+}
+
+*{
+   font-family: 'Nunito', sans-serif;
+   margin:0; padding:0;
+   box-sizing: border-box;
+   outline: none; border:none;
+   text-decoration: none;
+}
+
+*::selection{
+   background-color: var(--main-color);
+   color:#fff;
+}
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+   width: 1rem;
+   height: .5rem;
+}
+
+html::-webkit-scrollbar-track{
+   background-color: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+   background-color: var(--main-color);
+}
+
+body{
+   background-color: var(--light-bg) !important;
+   padding-left: 20rem;
+}
+
+body.dark{
+   --light-color:#aaa;
+   --light-bg:#333;
+   --black:#fff;
+   --white:#222;
+   --border:.1rem solid rgba(255,255,255,.2);
+}
+
+body.active{
+   padding-left: 0;
+}
+
+section{
+   padding:2rem;
+   margin: 0 auto;
+   max-width: 1200px;
+}
+
+.cheading{
+   font-size: 2.5rem;
+   color:var(--black);
+   margin-bottom: 2.5rem;
+   border-bottom: var(--border);
+   padding-bottom: 1.5rem;
+   text-transform: capitalize;
+}
+
+.cinline-btn,
+.cinline-option-btn,
+.cinline-delete-btn,
+.cbtn,
+.cdelete-btn,
+.coption-btn{
+   border-radius: .5rem;
+   color:#fff;
+   font-size: 1.8rem;
+   cursor: pointer;
+   text-transform: capitalize;
+   padding:1rem 3rem;
+   text-align: center;
+   margin-top: 1rem;
+}
+
+.cbtn,
+.cdelete-btn,
+.coption-btn{
+   display: block;
+   width: 100%;
+}
+
+.cinline-btn,
+.cinline-option-btn,
+.cinline-delete-btn{
+   display: inline-block;
+}
+
+.cbtn,
+.cinline-btn{
+   background-color: var(--main-color);
+}
+
+.coption-btn,
+.cinline-option-btn{
+   background-color:var(--orange);
+}
+
+.cdelete-btn,
+.cinline-delete-btn{
+   background-color: var(--red);
+}
+
+.cinline-btn:hover,
+.cinline-option-btn:hover,
+.cinline-delete-btn:hover,
+.cbtn:hover,
+.cdelete-btn:hover,
+.coption-btn:hover{
+   background-color: var(--black);
+   color: var(--white);
+}
+
+.cflex-btn{
+   display: flex;
+   gap: 1rem;
+}
+
+.cheader{
+   position: sticky;
+   top:0; left:0; right: 0;
+   background-color: var(--white);
+   z-index: 1000;
+   border-bottom: var(--border);
+}
+
+.cheader .cflex{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   position: relative;
+   padding: 1.5rem 2rem;
+}
+
+.cheader .cflex .clogo{
+   font-size: 2.5rem;
+   color: var(--black);
+   text-decoration: none;
+}
+
+.cheader .cflex .csearch-form{
+   width: 50rem;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding:1.5rem 2rem;
+   display: flex;
+   gap:2rem;
+
+}
+
+.cheader .cflex .csearch-form input{
+   width: 100%;
+   font-size: 1.8rem;
+   color:var(--black);
+   background:none;
+}
+
+.cheader .cflex .csearch-form button{
+   background:none;
+   font-size: 2rem;
+   cursor: pointer;
+   color:var(--black);
+}
+
+.cheader .cflex .csearch-form button:hover{
+   color: var(--main-color);
+}
+
+.cheader .cflex .cicons div{
+   font-size: 2rem;
+   color:var(--black);
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   height: 4.5rem;
+   width: 4.5rem;
+   line-height: 4.5rem;
+   cursor: pointer;
+   text-align: center;
+   margin-left: .7rem;
+}
+
+.cheader .cflex .cicons div:hover{
+   background-color: var(--black);
+   color:var(--white);
+}
+
+.cheader .cflex .cprofile{
+   position: absolute;
+   top:120%; right: 2rem;
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 1.5rem;
+   text-align: center;
+   overflow: hidden;
+   transform-origin: top right;
+   transform: scale(0);
+   transition: .2s linear;
+   width: 30rem;
+}
+
+.cheader .cflex .cprofile.active{
+   transform: scale(1);
+}
+
+.cheader .cflex .cprofile .cimage{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: contain;
+   margin-bottom: 1rem;
+}
+
+.cheader .cflex .cprofile .name{
+   font-size: 2rem;
+   color:var(--black);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.cheader .cflex .cprofile .crole{
+   font-size: 1.8rem;
+   color: var(--light-color);
+}
+
+#search-btn{
+   display: none;
+}
+
+.cside-bar{
+   position: fixed;
+   top: 0; left: 0;
+   width: 20rem;
+   background-color: var(--white);
+   height: 100vh;
+   border-right: var(--border);
+   z-index: 1200;
+}
+
+.cside-bar #close-btn{
+   text-align: right;
+   padding: 2rem;
+   display: none;
+}
+
+.cside-bar #close-btn i{
+   text-align: right;
+   font-size: 2.5rem;
+   background:var(--red);
+   border-radius: .5rem;
+   color:var(--white);
+   cursor: pointer;
+   height: 4.5rem;
+   width: 4.5rem;
+   line-height: 4.5rem;
+   text-align: center;
+}
+
+.cside-bar #close-btn i:hover{
+   background-color: var(--black);
+}
+
+.cside-bar .cprofile{
+   padding:3rem 2rem;
+   text-align: center;
+}
+
+.cside-bar .cprofile .cimage{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: contain;
+   margin-bottom: 1rem;
+}
+
+.cside-bar .cprofile .cname{
+   font-size: 2rem;
+   color:var(--black);
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+}
+
+.cside-bar .cprofile .crole{
+   font-size: 1.8rem;
+   color: var(--light-color);
+}
+
+.cside-bar .cnavbar a{
+   display: block;
+   padding: 2rem;
+   font-size: 2rem;
+   text-decoration: none;
+}
+
+.cside-bar .cnavbar a i{
+   margin-right: 1.5rem;
+   color:var(--main-color);
+   transition: .2s linear;
+}
+
+.cside-bar .cnavbar a span{
+   color:var(--light-color);
+}
+
+.cside-bar .cnavbar a:hover{
+   background-color: var(--light-bg);
+}
+
+.cside-bar .cnavbar a:hover i{
+   margin-right: 2.5rem;
+}
+
+.cside-bar.active{
+   left: -30rem;
+}
+
+.chome-grid .cbox-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, 27.5rem);
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.chome-grid .cbox-container .cbox{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding:2rem;
+}
+
+.chome-grid .cbox-container .cbox .ctitle{
+   font-size: 2rem;
+   color: var(--black);
+   text-transform: capitalize;
+}
+
+.chome-grid .cbox-container .cbox .cflex{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   margin-top: 2rem;
+}
+
+.chome-grid .cbox-container .cflex a{
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   padding: 1rem 1.5rem;
+   font-size: 1.5rem;
+   text-decoration: none;
+}
+
+.chome-grid .cbox-container .cflex a i{
+   margin-right: 1rem;
+   color:var(--black);
+}
+
+.chome-grid .cbox-container .cflex a span{
+   color:var(--light-color);
+}
+
+.chome-grid .cbox-container .cflex a:hover{
+   background-color: var(--black);
+}
+
+.chome-grid .cbox-container .cflex a:hover span{
+   color:var(--white);
+}
+
+.chome-grid .cbox-container .cflex a:hover i{
+   color:var(--white);
+}
+
+.chome-grid .cbox-container .ctutor{
+   padding: 1rem 0;
+   font-size: 1.8rem;
+   color:var(--light-color);
+   line-height: 2;
+}
+
+.come-grid .cbox-container .clikes{
+   color:var(--light-color);
+   font-size: 1.7rem;
+   margin-top: 1.5rem;
+}
+
+.chome-grid .cbox-container .clikes span{
+   color:var(--main-color);
+}
+
+.cabout .crow{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap:1.5rem;
+}
+
+.cabout .crow .cimage{
+   flex: 1 1 40rem;
+}
+
+.cabout .crow .cimage img{
+   width: 100%;
+   height: 50rem;
+}
+
+.cabout .crow .ccontent{
+   flex: 1 1 40rem;
+}
+
+.cabout .crow .ccontent p{
+   font-size: 1.7rem;
+   line-height: 2;
+   color: var(--light-color);
+   padding: 1rem 0;
+}
+
+.cabout .crow .ccontent h3{
+   font-size: 3rem;
+   color:var(--black);
+   text-transform: capitalize;
+}
+
+.cabout .cbox-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+   margin-top: 3rem;
+}
+
+.cabout .cbox-container .cbox{
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding: 2rem;
+   display: flex;
+   align-items: center;
+   gap: 2.5rem;
+}
+
+.cabout .cbox-container .cbox i{
+   font-size: 4rem;
+   color: var(--main-color);
+}
+
+.cabout .cbox-container .cbox h3{
+   font-size: 2.5rem;
+   color: var(--black);
+   margin-bottom: .3rem;
+}
+
+.cabout .cbox-container .cbox p{
+   font-size: 1.7rem;
+   color:var(--light-color);
+}
+
+.creviews .cbox-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.creviews .cbox-container .cbox{
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding: 2rem;
+}
+
+.creviews .cbox-container .cbox p{
+   line-height: 1.7;
+   font-size: 1.7rem;
+   color: var(--light-color);
+}
+
+.creviews .cbox-container .cbox .cstudent{
+   margin-top: 2rem;
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+}
+
+.creviews .cbox-container .cbox .cstudent img{
+   height: 5rem;
+   width: 5rem;
+   object-fit: cover;
+   border-radius: 50%;
+}
+
+.creviews .cbox-container .cbox .cstudent h3{
+   font-size: 2rem;
+   color: var(--black);
+   margin-bottom: .3rem;
+}
+
+.creviews .cbox-container .cbox .cstudent .cstars{
+   font-size: 1.5rem;
+   color:var(--orange);
+}
+
+.ccourses .cbox-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.ccourses .cbox-container .cbox{
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding: 2rem;
+}
+
+.ccourses .cbox-container .cbox .ctutor{
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   margin-bottom: 2.5rem;
+}
+
+.ccourses .cbox-container .cbox .ctutor img{
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.ccourses .cbox-container .cbox .ctutor h3{
+   font-size: 1.8rem;
+   color: var(--black);
+   margin-bottom: .2rem;
+}
+
+.ccourses .cbox-container .cbox .ctutor span{
+   font-size: 1.3rem;
+   color:var(--light-color);
+}
+
+.ccourses .cbox-container .cbox .cthumb{
+   position: relative;
+}
+
+.ccourses .cbox-container .cbox .cthumb span{
+   position: absolute;
+   top:1rem; left: 1rem;
+   border-radius: .5rem;
+   padding: .5rem 1.5rem;
+   background-color: rgba(0,0,0,.3);
+   color: #fff;
+   font-size: 1.5rem;
+}
+
+.ccourses .cbox-container .cbox .cthumb img{
+   width: 100%;
+   height: 20rem;
+   object-fit: cover;
+   border-radius: .5rem;
+}
+
+.ccourses .cbox-container .cbox .ctitle{
+   font-size: 2rem;
+   color: var(--black);
+   padding-bottom: .5rem;
+   padding-top: 1rem;
+}
+
+.ccourses .cmore-btn{
+   text-align: center;
+   margin-top: 2rem;
+}
+
+.cplaylist-details .crow{
+   display: flex;
+   align-items: flex-end;
+   gap:3rem;
+   flex-wrap: wrap;
+   background-color: var(--white);
+   padding: 2rem;
+}
+
+.cplaylist-details .crow .ccolumn{
+   flex: 1 1 40rem;
+}
+
+.cplaylist-details .crow .ccolumn .csave-playlist{
+   margin-bottom: 1.5rem;
+}
+
+.cplaylist-details .crow .ccolumn .csave-playlist button{
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding:1rem 1.5rem;
+   cursor: pointer;
+}
+
+.cplaylist-details .crow .ccolumn .csave-playlist button i{
+   font-size: 2rem;
+   color:var(--black);
+   margin-right: .8rem;
+}
+
+.cplaylist-details .crow .ccolumn .csave-playlist button span{
+   font-size: 1.8rem;
+   color:var(--light-color);
+}
+
+.cplaylist-details .crow .ccolumn .csave-playlist button:hover{
+   background-color: var(--black);
+}
+
+.cplaylist-details .crow .ccolumn .csave-playlist button:hover i{
+   color:var(--white);
+}
+
+.cplaylist-details .crow .ccolumn .csave-playlist button:hover span{
+   color:var(--white);
+}
+
+.cplaylist-details .crow .ccolumn .cthumb{
+   position: relative;
+}
+
+.cplaylist-details .crow .ccolumn .cthumb span{
+   font-size: 1.8rem;
+   color: #fff;
+   background-color: rgba(0,0,0,.3);
+   border-radius: .5rem;
+   position: absolute;
+   top: 1rem; left: 1rem;
+   padding: .5rem 1.5rem;
+}
+
+.cplaylist-details .crow .ccolumn .cthumb img{
+   height: 30rem;
+   width: 100%;
+   object-fit: cover;
+   border-radius: .5rem;
+}
+
+.cplaylist-details .crow .ccolumn .ctutor{
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   margin-bottom: 2rem;
+}
+
+.cplaylist-details .crow .ccolumn .ctutor img{
+   height: 7rem;
+   width: 7rem;
+   border-radius: 50%;
+   object-fit: cover;
+}
+
+.cplaylist-details .crow .ccolumn .ctutor h3{
+   font-size: 2rem;
+   color:var(--black);
+   margin-bottom: .2rem;
+}
+
+.cplaylist-details .crow .ccolumn .ctutor span{
+   font-size: 1.5rem;
+   color: var(--light-color);
+}
+
+.cplaylist-details .crow .ccolumn .cdetails h3{
+   font-size: 2rem;
+   color: var(--black);
+   text-transform: capitalize;
+}
+
+.cplaylist-details .crow .ccolumn .cdetails p{
+   padding: 1rem 0;
+   line-height: 2;
+   font-size: 1.8rem;
+   color: var(--light-color);
+}
+
+.cplaylist-videos .cbox-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.cplaylist-videos .cbox-container .cbox{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+   position: relative;
+}
+
+.cplaylist-videos .cbox-container .cbox i{
+   position: absolute;
+   top: 2rem; left: 2rem; right: 2rem;
+   height: 20rem;
+   border-radius: .5rem;
+   background-color: rgba(0,0,0,.3);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 5rem;
+   color: #fff;
+   display: none;
+}
+
+.cplaylist-videos .cbox-container .cbox:hover i{
+   display: flex;
+}
+
+.cplaylist-videos .cbox-container .cbox img{
+   width: 100%;
+   height: 20rem;
+   object-fit: cover;
+   border-radius: .5rem;
+}
+
+.cplaylist-videos .cbox-container .cbox h3{
+   margin-top: 1.5rem;
+   font-size: 1.8rem;
+   color: var(--black);
+}
+
+.cplaylist-videos .cbox-container .cbox:hover h3{
+   color: var(--main-color);
+}
+
+.cwatch-video .cvideo-container{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+}
+
+.cwatch-video .cvideo-container .video{
+   position: relative;
+   margin-bottom: 1.5rem;
+}
+
+.cwatch-video .cvideo-container .video video{
+   border-radius: .5rem;
+   width: 100%;
+   object-fit: contain;
+   background-color: #000;
+}
+
+.cwatch-video .cvideo-container .ctitle{
+   font-size: 2rem;
+   color: var(--black);
+}
+
+.cwatch-video .cvideo-container .cinfo{
+   display: flex;
+   margin-top: 1.5rem;
+   margin-bottom: 2rem;
+   border-bottom: var(--border);
+   padding-bottom: 1.5rem;
+   gap: 2.5rem;
+   align-items: center;
+}
+
+.cwatch-video .cvideo-container .cinfo p{
+   font-size: 1.6rem;
+}
+
+.cwatch-video .cvideo-container .cinfo p span{
+   color: var(--light-color);
+}
+
+.cwatch-video .cvideo-container .cinfo i{
+   margin-right: 1rem;
+   color: var(--main-color);
+}
+
+.cwatch-video .cvideo-container .ctutor{
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   margin-bottom: 1rem;
+}
+
+.cwatch-video .cvideo-container .ctutor img{
+   border-radius: 50%;
+   height: 5rem;
+   width: 5rem;
+   object-fit: cover;
+}
+
+.cwatch-video .cvideo-container .ctutor h3{
+   font-size: 2rem;
+   color: var(--black);
+   margin-bottom: .2rem;
+}
+
+.cwatch-video .cvideo-container .ctutor span{
+   font-size: 1.5rem;
+   color: var(--light-color);
+}
+
+.cwatch-video .cvideo-container .cflex{
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1.5rem;
+}
+
+.cwatch-video .cvideo-container .cflex button{
+   border-radius: .5rem;
+   padding: 1rem 1.5rem;
+   font-size: 1.8rem;
+   cursor: pointer;
+   background-color: var(--light-bg);
+}
+
+.cwatch-video .cvideo-container .cflex button i{
+   margin-right: 1rem;
+   color: var(--black);
+}
+
+.cwatch-video .cvideo-container .cflex button span{
+   color: var(--light-color);
+}
+
+.cwatch-video .cvideo-container .cflex button:hover{
+   background-color: var(--black);
+}
+
+.cwatch-video .cvideo-container .cflex button:hover i{
+   color: var(--white);
+}
+
+.cwatch-video .cvideo-container .cflex button:hover span{
+   color: var(--white);
+}
+
+.cwatch-video .cvideo-container .cdescription{
+   line-height: 1.5;
+   font-size: 1.7rem;
+   color: var(--light-color);
+   margin-top: 2rem;
+}
+
+.ccomments .cadd-comment{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+   margin-bottom: 3rem;
+}
+
+.ccomments .cadd-comment h3{
+   font-size: 2rem;
+   color: var(--black);
+   margin-bottom: 1rem;
+}
+
+.ccomments .cadd-comment textarea{
+   height: 20rem;
+   resize: none;
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   border: var(--border);
+   padding: 1.4rem;
+   font-size: 1.8rem;
+   color: var(--black);
+   width: 100%;
+   margin: .5rem 0;
+}
+
+.ccomments .cbox-container{
+   display: grid;
+   gap: 2.5rem;
+   background-color: var(--white);
+   padding: 2rem;
+   border-radius: .5rem;
+}
+
+.ccomments .cbox-container .cbox .cuser{
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+   margin-bottom: 2rem;
+}
+
+.ccomments .cbox-container .cbox .cuser img{
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+}
+
+.ccomments .cbox-container .cbox .cuser h3{
+   font-size: 2rem;
+   color: var(--black);
+   margin-bottom: .2rem;
+}
+
+.ccomments .cbox-container .cbox .cuser span{
+   font-size: 1.5rem;
+   color: var(--light-color);
+}
+
+.ccomments .cbox-container .cbox .ccomment-box{
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding:1rem 1.5rem;
+   white-space: pre-line;
+   margin: .5rem 0;
+   font-size: 1.8rem;
+   color: var(--black);
+   line-height: 1.5;
+   position: relative;
+   z-index: 0;
+}
+
+.ccomments .cbox-container .cbox .ccomment-box::before{
+   content: '';
+   position: absolute;
+   top: -1rem; left: 1.5rem;
+   background-color: var(--light-bg);
+   height: 1.2rem;
+   width: 2rem;
+   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+.cteachers .csearch-tutor{
+   margin-bottom: 2rem;
+   border-radius: .5rem;
+   background-color: var(--white);
+   padding: 1.5rem 2rem;
+   display: flex;
+   align-items: center;
+   gap: 1.5rem;
+}
+
+.cteachers .csearch-tutor input{
+   width: 100%;
+   background: none;
+   font-size: 1.8rem;
+   color: var(--black);
+}
+
+.cteachers .csearch-tutor button{
+   font-size: 2rem;
+   color: var(--black);
+   cursor: pointer;
+   background:none;
+}
+
+.cteachers .csearch-tutor button:hover{
+   color: var(--main-color);
+}
+
+.cteachers .cbox-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+}
+
+.cteachers .cbox-container .cbox{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+}
+
+.cteachers .cbox-container .coffer{
+   text-align: center;
+}
+
+.cteachers .cbox-container .coffer h3{
+   font-size: 2.5rem;
+   color: var(--black);
+   text-transform: capitalize;
+   padding-bottom: .5rem;
+}
+
+.cteachers .cbox-container .coffer p{
+   line-height: 1.7;
+   padding: .5rem 0;
+   color: var(--light-color);
+   font-size: 1.7rem;
+}
+
+.cteachers .cbox-container .cbox .ctutor{
+   display: flex;
+   align-items: center;
+   gap:2rem;
+   margin-bottom: 1.5rem;
+}
+
+.cteachers .cbox-container .cbox .ctutor img{
+   height: 5rem;
+   width: 5rem;
+   border-radius: 50%;
+}
+
+.cteachers .cbox-container .cbox .ctutor h3{
+   font-size: 2rem;
+   color: var(--black);
+   margin-bottom: .2rem;
+}
+
+.cteachers .cbox-container .cbox .ctutor span{
+   font-size: 1.6rem;
+   color: var(--light-color);
+}
+
+.cteachers .cbox-container .cbox p{
+   padding: .5rem 0;
+   font-size: 1.7rem;
+   color: var(--light-color);
+}
+
+.cteachers .cbox-container .cbox p span{
+   color: var(--main-color);
+}
+
+.cteacher-profile .cdetails{
+   text-align: center;
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+}
+
+.cteacher-profile .cdetails .ctutor img{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-bottom: 1rem;
+}
+
+.cteacher-profile .cdetails .ctutor h3{
+   font-size: 2rem;
+   color: var(--black);
+}
+
+.cteacher-profile .cdetails .ctutor span{
+   color: var(--light-color);
+   font-size: 1.7rem;
+}
+
+.cteacher-profile .cdetails .cflex{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+   margin-top: 2rem;
+}
+
+.cteacher-profile .cdetails .cflex p{
+   flex: 1 1 20rem;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   padding: 1.2rem 2rem;
+   font-size: 1.8rem;
+   color: var(--light-color);
+}
+
+.cteacher-profile .cdetails .cflex p span{
+   color: var(--main-color);
+}
+
+.cuser-profile .cinfo{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+}
+
+.cuser-profile .cinfo .cuser{
+   text-align: center;
+   margin-bottom: 2rem;
+   padding: 1rem;
+}
+
+.cuser-profile .cinfo .cuser img{
+   height: 10rem;
+   width: 10rem;
+   border-radius: 50%;
+   object-fit: cover;
+   margin-bottom: 1rem;
+}
+
+.cuser-profile .cinfo .cuser h3{
+   font-size: 2rem;
+   color: var(--black);
+}
+
+.cuser-profile .cinfo .cuser p{
+   font-size: 1.7rem;
+   color: var(--light-color);
+   padding: .3rem 0;
+}
+
+.cuser-profile .cinfo .cbox-container{
+   display: flex;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+}
+
+.cuser-profile .cinfo .cbox-container .cbox{
+   background-color: var(--light-bg);
+   border-radius: .5rem;
+   padding: 2rem;
+   flex: 1 1 25rem;
+}
+
+.cuser-profile .cinfo .cbox-container .cbox .cflex{
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   margin-bottom: 1rem;
+}
+
+.cuser-profile .cinfo .cbox-container .cbox .cflex i{
+   font-size:2rem;
+   color: var(--white);
+   background-color: var(--black);
+   text-align: center;
+   border-radius: .5rem;
+   height: 5rem;
+   width: 5rem;
+   line-height: 4.9rem;
+}
+
+.cuser-profile .cinfo .cbox-container .cbox .cflex span{
+   font-size: 2.5rem;
+   color: var(--main-color);
+}
+
+.cuser-profile .cinfo .cbox-container .cbox .cflex p{
+   color: var(--light-color);
+   font-size: 1.7rem;
+}
+
+.ccontact .crow{
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 1.5rem;
+}
+
+.ccontact .crow .cimage{
+   flex: 1 1 50rem;
+}
+
+.ccontact .crow .cimage img{
+   width: 100%;
+}
+
+.ccontact .crow form{
+   flex: 1 1 30rem;
+   background-color: var(--white);
+   padding: 2rem;
+   text-align: center;
+}
+
+.ccontact .crow form h3{
+   margin-bottom: 1rem;
+   text-transform: capitalize;
+   color:var(--black);
+   font-size: 2.5rem;
+}
+
+.ccontact .crow form .cbox{
+   width: 100%;
+   border-radius: .5rem;
+   background-color: var(--light-bg);
+   margin: 1rem 0;
+   padding: 1.4rem;
+   font-size: 1.8rem;
+   color: var(--black);
+}
+
+.ccontact .crow form textarea{
+   height: 20rem;
+   resize: none;
+}
+
+.ccontact .cbox-container{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+   gap:1.5rem;
+   justify-content: center;
+   align-items: flex-start;
+   margin-top: 3rem;
+}
+
+.ccontact .cbox-container .cbox{
+   text-align: center;
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 3rem;
+}
+
+.ccontact .cbox-container .cbox i{
+   font-size: 3rem;
+   color: var(--main-color);
+   margin-bottom: 1rem;
+}
+
+.ccontact .cbox-container .cbox h3{
+   font-size: 2rem;
+   color:var(--black);
+   margin: 1rem 0;
+}
+
+.ccontact .cbox-container .cbox a{
+   display: block;
+   padding-top: .5rem;
+   font-size: 1.8rem;
+   color: var(--light-color);
+   text-decoration: none;
+}
+
+.ccontact .cbox-container .cbox a:hover{
+   text-decoration: underline;
+   color:var(--black);
+}
+
+.cform-container{
+   min-height: calc(100vh - 20rem);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.cform-container form{
+   background-color: var(--white);
+   border-radius: .5rem;
+   padding: 2rem;
+   width: 50rem;
+}
+
+.cform-container form h3{
+   font-size: 2.5rem;
+   text-transform: capitalize;
+   color: var(--black);
+   text-align: center;
+}
+
+.cform-container form p{
+   font-size: 1.7rem;
+   color: var(--light-color);
+   padding-top: 1rem;
+}
+
+.cform-container form p span{
+   color: var(--red);
+}
+
+.cform-container form .cbox{
+   font-size: 1.8rem;
+   color: var(--black);
+   border-radius: .5rem;
+   padding: 1.4rem;
+   background-color: var(--light-bg);
+   width: 100%;
+   margin: 1rem 0;
+}
+
+
+
+
+
+
+.cfooter{
+   background-color: var(--white);
+   border-top: var(--border);
+   position: sticky;
+   bottom: 0; left: 0; right: 0;
+   text-align: center;
+   font-size: 2rem;
+   padding:2.5rem 2rem;
+   color:var(--black);
+   margin-top: 1rem;
+   z-index: 1000;
+   /* padding-bottom: 9.5rem; */
+}
+
+.cfooter a{
+   text-decoration: none;
+}
+
+.cfooter span{
+   color:var(--main-color);
+}
+
+
+
+@media (max-width:1200px){
+
+   body{
+      padding-left: 0;
+   }
+
+   .cside-bar{
+      left: -30rem;
+      transition: .2s linear;
+   }
+
+   .cside-bar #close-btn{
+      display: block;
+   }
+
+   .cside-bar.active{
+      left: 0;
+      box-shadow: 0 0 0 100vw rgba(0,0,0,.8);
+      border-right: 0;
+   }
+
+}
+
+@media (max-width:991px){
+
+   html{
+      font-size: 55%;
+   }
+
+}
+
+@media (max-width:768px){
+
+   #search-btn{
+      display: inline-block;
+   }
+
+   .cheader .cflex .csearch-form{
+      position: absolute;
+      top: 99%; left: 0; right: 0;
+      border-top: var(--border);
+      border-bottom: var(--border);
+      background-color: var(--white);
+      border-radius: 0;
+      width: auto;
+      padding: 2rem;
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      transition: .2s linear;
+   }
+
+   .cheader .cflex .csearch-form.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+}
+
+@media (max-width:450px){
+
+   html{
+      font-size: 50%;
+   }
+
+   .cflex-btn{
+      gap: 0;
+      flex-flow: column;
+   }
+
+   .chome-grid .cbox-container{
+      grid-template-columns: 1fr;
+   }
+
+   .cabout .crow .cimage img{
+      height: 25rem;
+   }
+
+}
