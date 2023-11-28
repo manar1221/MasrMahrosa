@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Livewire\AramlComponent;
+use App\Http\Livewire\AytamComponent;
 use App\Http\Livewire\CasesComponent;
+use App\Http\Livewire\DeforsedComponent;
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +25,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',HomeComponent::class)->name('home.index');
 
 Route::get('/cases',CasesComponent::class)->name('cases');
+Route::get('/aytam',AytamComponent::class)->name('aytam');
+Route::get('/araml',AramlComponent::class)->name('araml');
+Route::get('/deforsed',DeforsedComponent::class)->name('deforsed');
 
 
 Route::get('/dashboard', function () {
