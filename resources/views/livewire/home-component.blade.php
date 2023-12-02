@@ -20,33 +20,33 @@
               <tr>
                 <td>
                   <a
-                    href="deforsed.html"
+                    href="{{route('deforsed')}}"
                     class="text-success text-decoration-none"
                   >
                     عرض الكل
                   </a>
                 </td>
-                <td>100</td>
+                <td>{{ $deforse_cases->total() }}</td>
                 <th scope="row">مطلقات</th>
               </tr>
 
               <tr>
                 <td>
-                  <a href="aytam.html" class="text-success text-decoration-none">
+                  <a href="{{route('aytam')}}" class="text-success text-decoration-none">
                     عرض الكل
                   </a>
                 </td>
-                <td>300</td>
+                <td>{{ $aytam_cases->total() }}</td>
                 <th scope="row">ايتام</th>
               </tr>
 
               <tr>
                 <td>
-                  <a href="araml.html" class="text-success text-decoration-none">
+                  <a href="{{route('araml')}}" class="text-success text-decoration-none">
                     عرض الكل
                   </a>
                 </td>
-                <td>200</td>
+                <td>{{ $araml_cases->total() }}</td>
                 <th scope="row">ارامل</th>
               </tr>
             </tbody>

@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('case_id')->unique();
             $table->string('name');
             $table->string('national_id')->unique();
-            $table->string('age')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('period')->nullable();
+            $table->string('age');
+            $table->string('phone');
+            $table->string('period');
             $table->text('address');
 
             $table->enum('home_add',['city','regular']);
@@ -79,7 +79,7 @@ return new class extends Migration
             $table->text('table_note')->nullable();
 
             $table->enum('Plumbing_status',['good','not_good']);
-            $table->text('Plumbing_note');
+            $table->text('Plumbing_note')->nullable();;
 
             $table->enum('elec_status',['good','not_good']);
             $table->text('elec_note')->nullable();
@@ -94,12 +94,12 @@ return new class extends Migration
 
             $table->enum('mother_status',['divorced','leave','married','others'])->default('divorced');
 
-            $table->date('divorce_date');
+            $table->date('divorce_date')->nullable();
 
-            $table->string('Resident_name1');
-            $table->string('Resident_age1');
-            $table->string('Resident_relate1');
-            $table->string('Resident_job1');
+            $table->string('Resident_name1')->nullable();
+            $table->string('Resident_age1')->nullable();
+            $table->string('Resident_relate1')->nullable();
+            $table->string('Resident_job1')->nullable();
 
             $table->enum('edu_level',['hiegh','high_school','middle','Literacy','illiteracy']);
 
@@ -107,11 +107,11 @@ return new class extends Migration
 
             $table->enum('reed_write_want',['want','dont_want']);
 
-            $table->string('child1_name');
-            $table->string('child1_level');
-            $table->string('child1_school');
-            $table->string('child1_edu_level');
-            $table->string('child1_need');
+            $table->string('child1_name')->nullable();
+            $table->string('child1_level')->nullable();
+            $table->string('child1_school')->nullable();
+            $table->string('child1_edu_level')->nullable();
+            $table->string('child1_need')->nullable();
 
             $table->enum('health_status',['good','injuries','disabilities','disease']);
 
@@ -121,10 +121,10 @@ return new class extends Migration
 
             $table->enum('treatment_not_subscribed',['yes','no']);
 
-            $table->string('health_name1');
-            $table->string('health_status1');
-            $table->string('illness1');
-            $table->string('need1');
+            $table->string('health_name1')->nullable();
+            $table->string('health_status1')->nullable();
+            $table->string('illness1')->nullable();
+            $table->string('need1')->nullable();
 
             $table->enum('problem_solve',['beating','insults','discussion','others']);
 
@@ -136,18 +136,18 @@ return new class extends Migration
 
             $table->enum('what_problems',['Skirmishes','others','nothing']);
 
-            $table->string('expense_dad');
-            $table->string('salary');
-            $table->string('manara_help');
-            $table->string('revenues_total');
+            $table->string('expense_dad')->nullable();
+            $table->string('salary')->nullable();
+            $table->string('manara_help')->nullable();
+            $table->string('revenues_total')->nullable();
 
-            $table->string('rent');
-            $table->string('tube');
-            $table->string('feed');
-            $table->string('transfers');
-            $table->string('expenses_total');
+            $table->string('rent')->nullable();
+            $table->string('tube')->nullable();
+            $table->string('feed')->nullable();
+            $table->string('transfers')->nullable();
+            $table->string('expenses_total')->nullable();
 
-            $table->string('breadwinner_job');
+            $table->string('breadwinner_job')->nullable();
 
             $table->enum('old_projects',['yes','no']);
 

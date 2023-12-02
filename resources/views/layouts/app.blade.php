@@ -30,16 +30,7 @@
       <section class="cflex">
         <a href="{{route('home.index')}}" class="clogo">Masr AL-Mahrosa</a>
 
-        <form action="search.html" method="post" class="csearch-form">
-          <input
-            type="text"
-            name="search_box"
-            required
-            placeholder="search cases..."
-            maxlength="100"
-          />
-          <button type="submit" class="fas fa-search"></button>
-        </form>
+        @livewire('header-search-component')
 
         <div class="cicons">
           <div id="menu-btn" class="fas fa-bars"></div>
