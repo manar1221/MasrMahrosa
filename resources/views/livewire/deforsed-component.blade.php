@@ -36,7 +36,7 @@
                         <td>
                           <a href="edit.html" class="text-info text-decoration-none"> تعديل </a> /
                           <a href="#" class="text-danger text-decoration-none"> حذف </a> /
-                          <a href="#" class="text-success text-decoration-none"> عرض </a>
+                          <a href="{{route('case.details',['case_id'=>$deforse_case->case_id])}}" class="text-success text-decoration-none"> عرض </a>
                         </td>
                         <td> {{$deforse_case->age}} </td>
                         <td> {{$deforse_case->name}} </td>

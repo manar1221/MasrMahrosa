@@ -5,6 +5,7 @@ use App\Http\Livewire\AramlComponent;
 use App\Http\Livewire\AytamComponent;
 use App\Http\Livewire\CasesComponent;
 use App\Http\Livewire\DeforsedComponent;
+use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\SearchComponent;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ Route::get('/araml',AramlComponent::class)->name('araml');
 Route::get('/deforsed',DeforsedComponent::class)->name('deforsed');
 Route::get('/search',SearchComponent::class)->name('case.search');
 Route::get('/case/add',AddCaseComponent::class)->name('case.add');
+Route::get('/case/{case_id}',DetailsComponent::class)->name('case.details');
 
 
 // Route::get('/dashboard', function () {
