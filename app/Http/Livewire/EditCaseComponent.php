@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Deforsed;
 use Livewire\Component;
 use Livewire\WithFileUploads;
+use App\Models\Deforsed;
 
-class AddCaseComponent extends Component
+class EditCaseComponent extends Component
 {
     use WithFileUploads;
 
@@ -141,8 +141,140 @@ class AddCaseComponent extends Component
     public $project_want = 'yes';
     public $project_want_type = 'grocery';
 
+    public function mount($case_id)
+    {
+        $case = Deforsed::find($case_id);
+        $this->case_id =  $case->case_id ;
+        $this->name =  $case->name ;
+        $this->national_id = $case->national_id;
+        $this->age = $case->age  ;
+        $this->phone =  $case->phone ;
+        $this->period =  $case->period ;
+        $this->address =  $case->address ;
 
-    public function addCase()
+        $this->home_add = $case->home_add  ;
+        $this->home_status = $case->home_status  ;
+        $this->home_des = $case->home_des  ;
+        $this->room_no = $case->room_no  ;
+        $this->bathroom = $case->bathroom  ;
+
+        $this->number_of_gas_stove = $case->number_of_gas_stove  ;
+        $this->gas_stove_status = $case->gas_stove_status  ;
+        $this->gas_stove_note = $case->gas_stove_note  ;
+
+        $this->washing_machine_no = $case->washing_machine_no  ;
+        $this->washing_machine_status = $case->washing_machine_status  ;
+        $this->washing_machine_note = $case->washing_machine_note  ;
+
+        $this->Refrigerator_no = $case->Refrigerator_no  ;
+        $this->Refrigerator_status = $case->Refrigerator_status  ;
+        $this->Refrigerator_note = $case->Refrigerator_note  ;
+
+        $this->tv_no = $case->tv_no  ;
+        $this->tv_status = $case->tv_status  ;
+        $this->tv_note = $case->tv_note  ;
+
+        $this->fans_no = $case->fans_no  ;
+        $this->fans_status = $case->fans_status  ;
+        $this->fans_note = $case->fans_note  ;
+
+        $this->heater_no = $case->heater_no  ;
+        $this->heater_status = $case->heater_status  ;
+        $this->heater_note = $case->heater_note  ;
+
+        $this->bed_no = $case->bed_no  ;
+        $this->bed_status = $case->bed_status  ;
+        $this->bed_enough = $case->bed_enough  ;
+        $this->bed_note = $case->bed_note  ;
+
+        $this->cupboard_no = $case->cupboard_no  ;
+        $this->cupboard_status = $case->cupboard_status  ;
+        $this->cupboard_enough = $case->cupboard_enough  ;
+        $this->cupboard_note = $case->cupboard_note  ;
+
+        $this->living_no = $case->living_no  ;
+        $this->living_status = $case->living_status  ;
+        $this->living_enough = $case->living_enough  ;
+        $this->living_note = $case->living_note  ;
+
+        $this->chair_no = $case->chair_no  ;
+        $this->chair_status = $case->chair_status  ;
+        $this->chair_enough = $case->chair_enough  ;
+        $this->chair_note = $case->chair_note  ;
+
+        $this->table_no = $case->table_no  ;
+        $this->table_status = $case->table_status  ;
+        $this->table_enough = $case->table_enough  ;
+        $this->table_note = $case->table_note  ;
+
+        $this->Plumbing_status = $case->Plumbing_status  ;
+        $this->Plumbing_note = $case->Plumbing_note  ;
+
+        $this->elec_status = $case->elec_status  ;
+        $this->elec_note = $case->elec_note  ;
+
+        $this->Carpentry_status = $case->Carpentry_status  ;
+        $this->Carpentry_note = $case->Carpentry_note  ;
+
+        $this->Restorations_status = $case->Restorations_status  ;
+        $this->Restorations_note = $case->Restorations_note  ;
+
+        $this->breadwinner = $case->breadwinner  ;
+
+        $this->mother_status = $case->mother_status  ;
+
+        $this->divorce_date = $case->divorce_date  ;
+
+        $this->Resident_name1 = $case->Resident_name1  ;
+        $this->Resident_age1 = $case->Resident_age1  ;
+        $this->Resident_relate1 = $case->Resident_relate1  ;
+        $this->Resident_job1 = $case->Resident_job1  ;
+
+        $this->edu_level = $case->edu_level  ;
+        $this->reed_write_status = $case->reed_write_status  ;
+        $this->reed_write_want = $case->reed_write_want  ;
+
+        $this->child1_name = $case->child1_name  ;
+        $this->child1_level = $case->child1_level  ;
+        $this->child1_school = $case->child1_school  ;
+        $this->child1_edu_level = $case->child1_edu_level  ;
+        $this->child1_need = $case->child1_need  ;
+
+        $this->health_status = $case->health_status  ;
+        $this->treatment = $case->treatment  ;
+        $this->treatment_status =  $case->treatment_status ;
+        $this->treatment_not_subscribed = $case->treatment_not_subscribed  ;
+
+        $this->health_name1 = $case->health_name1  ;
+        $this->health_status1 = $case->health_status1  ;
+        $this->illness1 = $case->illness1  ;
+        $this->need1 = $case->need1  ;
+
+        $this->problem_solve = $case->problem_solve  ;
+        $this->child_reward = $case->child_reward  ;
+        $this->help_problem = $case->help_problem  ;
+        $this->problems = $case->problems  ;
+        $this->what_problems = $case->what_problems  ;
+
+        $this->expense_dad = $case->expense_dad ;
+        $this->salary = $case->salary  ;
+        $this->manara_help = $case->manara_help  ;
+        $this->revenues_total = $case->revenues_total  ;
+
+        $this->rent = $case->rent  ;
+        $this->tube = $case->tube  ;
+        $this->feed = $case->feed  ;
+        $this->transfers = $case->transfers  ;
+        $this->expenses_total = $case->expenses_total  ;
+
+        $this->breadwinner_job = $case->breadwinner_job  ;
+        $this->old_projects = $case->old_projects  ;
+        $this->project_type = $case->project_type  ;
+        $this->project_want = $case->project_want  ;
+        $this->project_want_type = $case->project_want_type ;
+    }
+
+    public function updateCase()
     {
         $this->validate([
             'case_id'=>'required',
@@ -153,7 +285,7 @@ class AddCaseComponent extends Component
             'address' => 'required',
             'mother_status' => 'required',
         ]);
-        $case= new Deforsed();
+        $case= Deforsed::find($this->case_id);
         $case->case_id =$this->case_id ;
         $case->name =$this->name ;
         $case->national_id =$this->national_id ;
@@ -284,13 +416,12 @@ class AddCaseComponent extends Component
         $case->project_want_type =$this->project_want_type ;
 
         $case->save();
-        session()->flash('message','Case has been added!');
+        session()->flash('message','Case has been updated!');
         return redirect()->route('deforsed');
-
     }
 
     public function render()
     {
-        return view('livewire.add-case-component');
+        return view('livewire.edit-case-component');
     }
 }

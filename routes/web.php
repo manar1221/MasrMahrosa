@@ -6,6 +6,7 @@ use App\Http\Livewire\AytamComponent;
 use App\Http\Livewire\CasesComponent;
 use App\Http\Livewire\DeforsedComponent;
 use App\Http\Livewire\DetailsComponent;
+use App\Http\Livewire\EditCaseComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\SearchComponent;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,7 @@ Route::get('/deforsed',DeforsedComponent::class)->name('deforsed');
 Route::get('/search',SearchComponent::class)->name('case.search');
 Route::get('/case/add',AddCaseComponent::class)->name('case.add');
 Route::get('/case/{case_id}',DetailsComponent::class)->name('case.details');
+Route::get('/case/edit/{case_id}',EditCaseComponent::class)->name('case.edit');
 
 
 // Route::get('/dashboard', function () {

@@ -18,7 +18,7 @@
         {{-- @if (Session::has('message'))
             <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
         @endif --}}
-          <form wire:submit.prevent="addCase">
+          <form wire:submit.prevent="updateCase">
              <div class="m-5">
                 <label for="case_id" class="from-lable fw-bolder fs-3"> كود الحالة </label>
                 <input type="text" name="case_id" class="form-control text-end fs-3" placeholder="" wire:model="case_id">
@@ -918,7 +918,7 @@
                     <p class="text-danger">{{ $message }}</p>
                    @enderror
 
-             <button type="submit" class="cbtn btn-primary float-start w-auto"> إضافة </button>
+             <button type="submit" class="cbtn btn-primary float-start w-auto"> تعديل </button>
          </form>
        </div>
      </div>
