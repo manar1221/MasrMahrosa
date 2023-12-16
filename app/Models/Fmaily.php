@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Deforsed extends Model
+class Fmaily extends Model
 {
     use HasFactory;
 
-    public function fmaily()
+    public function deforseds()
     {
-        return $this->hasMany(Fmaily::class, 'deforsed_id');
+        return $this->belongsTo(Deforsed::class);
     }
 }

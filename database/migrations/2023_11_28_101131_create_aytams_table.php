@@ -18,144 +18,130 @@ return new class extends Migration
             $table->string('case_id')->unique();
             $table->string('name');
             $table->string('national_id')->unique();
-            $table->string('age')->nullable();
-            $table->string('phone')->nullable();
-            $table->string('period')->nullable();
+            $table->string('age');
+            $table->string('phone');
+            $table->string('period');
             $table->text('address');
 
-            $table->enum('home_add',['city','regular']);
-            $table->enum('home_status',['new','old','family']);
-            $table->enum('home_des',['healthy','not_healthy']);
-            $table->enum('room_no',['1room','2room','3+room']);
-            $table->enum('bathroom',['private','public']);
+            $table->enum('home_add',['مدينة','عشوائية'])->default('عشوائية');
+            $table->enum('home_status',['ايجار جديد','ايجار قديم','بيت العائلة'])->default('ايجار جديد');
+            $table->enum('home_des',['صحي','غير صحي'])->default('صحي');
+            $table->enum('room_no',['حجرة واحدة','حجرتين','ثلاثة فاكثر'])->default('حجرتين');
+            $table->enum('bathroom',['خاصة','مشتركة'])->default('خاصة');
 
-            $table->enum('number_of_gas_stove',['0','1','2']);
-            $table->enum('gas_stove_status',['good','not_good']);
+            $table->enum('number_of_gas_stove',['0','1','2'])->default('1');
+            $table->enum('gas_stove_status',['سليمة','غير سليمة'])->default('سليمة');
             $table->text('gas_stove_note')->nullable();
 
-            $table->enum('washing_machine_no',['0','1','2']);
-            $table->enum('washing_machine_status',['good','not_good']);
+            $table->enum('washing_machine_no',['0','1','2'])->default('1');
+            $table->enum('washing_machine_status',['سليمة','غير سليمة'])->default('سليمة');
             $table->text('washing_machine_note')->nullable();
 
-            $table->enum('Refrigerator_no',['0','1','2']);
-            $table->enum('Refrigerator_status',['good','not_good']);
+            $table->enum('Refrigerator_no',['0','1','2'])->default('1');
+            $table->enum('Refrigerator_status',['سليمة','غير سليمة'])->default('سليمة');
             $table->text('Refrigerator_note')->nullable();
 
-            $table->enum('tv_no',['0','1','2']);
-            $table->enum('tv_status',['good','not_good']);
+            $table->enum('tv_no',['0','1','2'])->default('1');
+            $table->enum('tv_status',['سليمة','غير سليمة'])->default('سليمة');
             $table->text('tv_note')->nullable();
 
-            $table->enum('fans_no',['0','1','2']);
-            $table->enum('fans_status',['good','not_good']);
+            $table->enum('fans_no',['0','1','2'])->default('1');
+            $table->enum('fans_status',['سليمة','غير سليمة'])->default('سليمة');
             $table->text('fans_note')->nullable();
 
-            $table->enum('heater_no',['0','1','2']);
-            $table->enum('heater_status',['good','not_good']);
+            $table->enum('heater_no',['0','1','2'])->default('1');
+            $table->enum('heater_status',['سليمة','غير سليمة'])->default('سليمة');
             $table->text('heater_note')->nullable();
 
-            $table->enum('bed_no',['0','1','2']);
-            $table->enum('bed_status',['good','not_good']);
-            $table->enum('bed_enough',['enough','not_enough']);
+            $table->enum('bed_no',['0','1','2'])->default('1');
+            $table->enum('bed_status',['سليمة','غير سليمة'])->default('سليمة');
+            $table->enum('bed_enough',['كافى','غير كافى'])->default('غير كافى');
             $table->text('bed_note')->nullable();
 
-            $table->enum('cupboard_no',['0','1','2']);
-            $table->enum('cupboard_status',['good','not_good']);
-            $table->enum('cupboard_enough',['enough','not_enough']);
+            $table->enum('cupboard_no',['0','1','2'])->default('1');
+            $table->enum('cupboard_status',['سليمة','غير سليمة'])->default('سليمة');
+            $table->enum('cupboard_enough',['كافى','غير كافى'])->default('غير كافى');
             $table->text('cupboard_note')->nullable();
 
-            $table->enum('living_no',['0','1','2']);
-            $table->enum('living_status',['good','not_good']);
-            $table->enum('living_enough',['enough','not_enough']);
+            $table->enum('living_no',['0','1','2'])->default('1');
+            $table->enum('living_status',['سليمة','غير سليمة'])->default('سليمة');
+            $table->enum('living_enough',['كافى','غير كافى'])->default('غير كافى');
             $table->text('living_note')->nullable();
 
-            $table->enum('chair_no',['0','1','2']);
-            $table->enum('chair_status',['good','not_good']);
-            $table->enum('chair_enough',['enough','not_enough']);
+            $table->enum('chair_no',['0','1','2'])->default('1');
+            $table->enum('chair_status',['سليمة',' غير سليمة '])->default('سليمة');
+            $table->enum('chair_enough',['كافى','غير كافى'])->default('غير كافى');
             $table->text('chair_note')->nullable();
 
-            $table->enum('table_no',['0','1','2']);
-            $table->enum('table_status',['good','not_good']);
-            $table->enum('table_enough',['enough','not_enough']);
+            $table->enum('table_no',['0','1','2'])->default('1');
+            $table->enum('table_status',['سليمة','غير سليمة'])->default('سليمة');
+            $table->enum('table_enough',['كافى','غير كافى'])->default('غير كافى');
             $table->text('table_note')->nullable();
 
-            $table->enum('Plumbing_status',['good','not_good']);
-            $table->text('Plumbing_note');
+            $table->enum('Plumbing_status',['سليمة','غير سليمة'])->default('سليمة');
+            $table->text('Plumbing_note')->nullable();;
 
-            $table->enum('elec_status',['good','not_good']);
+            $table->enum('elec_status',['سليمة','غير سليمة'])->default('سليمة');
             $table->text('elec_note')->nullable();
 
-            $table->enum('Carpentry_status',['good','not_good']);
+            $table->enum('Carpentry_status',['سليمة','غير سليمة'])->default('سليمة');
             $table->text('Carpentry_note')->nullable();
 
-            $table->enum('Restorations_status',['good','not_good']);
+            $table->enum('Restorations_status',['سليمة','غير سليمة'])->default('سليمة');
             $table->text('Restorations_note')->nullable();
 
-            $table->enum('breadwinner',['mother','grandmother','aunti','aunt','others8']);
+            $table->enum('breadwinner',['الام','الجدة','الخالة','العمة','اخرين'])->default('الام');
 
-            $table->enum('mother_status',['leave','married','others']);
+            $table->enum('mother_status',['مطلقة','هجر','متزوجة','اخري'])->default('مطلقة');
 
-            $table->date('divorce_date');
+            $table->date('divorce_date')->nullable();
 
-            $table->string('Resident_name1');
-            $table->string('Resident_age1');
-            $table->string('Resident_relate1');
-            $table->string('Resident_job1');
 
-            $table->enum('edu_level',['hiegh','high_school','middle','Literacy','illiteracy']);
+            $table->enum('edu_level',['مؤهل عالي','شهاده الثانويه العام','مؤهل متوسط','شهادة محو امية','امية'])->default('امية');
 
-            $table->enum('reed_write_status',['good','not_good']);
+            $table->enum('reed_write_status',['تستطيع القراءة','لا تستطيع القراء'])->default('تستطيع القراءة');
 
-            $table->enum('reed_write_want',['want','dont_want']);
+            $table->enum('reed_write_want',['ارغب','لا ارغب'])->default('لا ارغب');
 
-            $table->string('child1_name');
-            $table->string('child1_level');
-            $table->string('child1_school');
-            $table->string('child1_edu_level');
-            $table->string('child1_need');
 
-            $table->enum('health_status',['good','injuries','disabilities','disease']);
+            $table->enum('health_status',['صحة جيدة','اصابات','اعاقات','مرض مزمن'])->default('اصابات');
 
-            $table->enum('treatment',['regular','irregular','nothing']);
+            $table->enum('treatment',['منتظم شهري','غير منتظم','لايوجد'])->default('غير منتظم');
 
-            $table->enum('treatment_status',['health_insurance','irregular','State_expense','donation','mother_money']);
+            $table->enum('treatment_status',['التامين الصحي','غير منتظم','نفقة الدولة','تبرع','يتم شرائه علي نفقة الام'])->default('يتم شرائه علي نفقة الام');
 
-            $table->enum('treatment_not_subscribed',['yes','no']);
+            $table->enum('treatment_not_subscribed',['نعم','لا'])->default('نعم');
 
-            $table->string('health_name1');
-            $table->string('health_status1');
-            $table->string('illness1');
-            $table->string('need1');
+            $table->enum('problem_solve',['الضرب','السباب','الحوار والمناقشة','اخري'])->default('السباب');
 
-            $table->enum('problem_solve',['beating','insults','discussion','others']);
+            $table->enum('child_reward',['تشجيع معنوي','تشجيع مادي','لاتكافئ','اخري'])->default('لاتكافئ');
 
-            $table->enum('child_reward',['moral_encouragement','financial_encouragement','Dont_reward','others']);
+            $table->enum('help_problem',['الخال','العم','الجدة','المنارة','اخري'])->default('الجدة');
 
-            $table->enum('help_problem',['Unclem','Uncled','grandma','manara','others']);
+            $table->enum('problems',['نعم','لا'])->default('لا');
 
-            $table->enum('problems',['yes','no']);
+            $table->enum('what_problems',['مناوشات','اخري','لايوجد'])->default('لايوجد');
 
-            $table->enum('what_problems',['Skirmishes','others','nothing']);
+            $table->string('expense_dad')->nullable();
+            $table->string('salary')->nullable();
+            $table->string('manara_help')->nullable();
+            $table->string('revenues_total')->nullable();
 
-            $table->string('expense_dad');
-            $table->string('salary');
-            $table->string('manara_help');
-            $table->string('revenues_total');
+            $table->string('rent')->nullable();
+            $table->string('tube')->nullable();
+            $table->string('feed')->nullable();
+            $table->string('transfers')->nullable();
+            $table->string('expenses_total')->nullable();
 
-            $table->string('rent');
-            $table->string('tube');
-            $table->string('feed');
-            $table->string('transfers');
-            $table->string('expenses_total');
+            $table->string('breadwinner_job')->nullable();
 
-            $table->string('breadwinner_job');
+            $table->enum('old_projects',['نعم','لا'])->default('لا');
 
-            $table->enum('old_projects',['yes','no']);
+            $table->enum('project_type',['بقالة','الخياطة','تقسيط','ماكولات','اخري'])->default('اخري');
 
-            $table->enum('project_type',['grocery','sewing','installment','foods','others']);
+            $table->enum('project_want',['نعم','لا'])->default('نعم');
 
-            $table->enum('project_want',['yes','no']);
-
-            $table->enum('project_want_type',['grocery','sewing','installment','foods','others']);
+            $table->enum('project_want_type',['بقالة','الخياطة','تقسيط','ماكولات','اخري'])->default('نعم');
 
             $table->timestamps();
         });

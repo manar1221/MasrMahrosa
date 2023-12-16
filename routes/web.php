@@ -35,7 +35,7 @@ Route::get('/deforsed',DeforsedComponent::class)->name('deforsed');
 Route::get('/search',SearchComponent::class)->name('case.search');
 Route::get('/case/add',AddCaseComponent::class)->name('case.add');
 Route::get('/case/{case_id}',DetailsComponent::class)->name('case.details');
-Route::get('/case/edit/{case_id}',EditCaseComponent::class)->name('case.edit');
+Route::get('/case/edit/{deforsecase_id}',EditCaseComponent::class)->name('case.edit');
 
 
 // Route::get('/dashboard', function () {

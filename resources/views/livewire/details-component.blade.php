@@ -231,26 +231,60 @@
           </table>
 
            <h1 class="text-center m-5">  المقيمين بالسكن وعلاقاتهم </h1>
-           <table class="table fw-bolder fs-3 table-bordered  table-responsive">
-            <thead class="table-light">
-               <tr>
-                  <th scope="col"> <h2>  {{$case->Resident_name1}} </h2> </th>
-                <th scope="col"> <h2> الاسم </h2> </th>
-                </tr>
+           <table class="table fw-bolder fs-3 table-bordered table-responsive">
+             <thead class="table-light">
                 <tr>
-                    <th scope="col"> <h2> {{$case->Resident_age1}} </h2></th>
-                    <th scope="col"> <h2>  السن </h2> </th>
-                </tr>
-                <tr>
-                    <th scope="col"> <h2> {{$case->Resident_relate1}} </h2></th>
-                    <th scope="col"> <h2>  درجة القرابـة  </h2> </th>
-                </tr>
-                <tr>
-                    <th scope="col"> <h2> {{$case->Resident_job1}} </h2></th>
-                    <th scope="col"> <h2>  المهنــة </h2> </th>
-                </tr>
-            </thead>
-          </table>
+                   <th scope="col">  المهنــة  </th>
+                   <th scope="col">  درجة القرابـة  </th>
+                   <th scope="col"> السن </th>
+                   <th scope="col"> الاسم </th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                   <td> {{$family->Resident_job1}} </td>
+                   <td> {{$family->Resident_relate1}} </td>
+                   <td> {{$family->Resident_age1}} </td>
+                   <td> {{$family->Resident_name1}} </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->Resident_job2}} </td>
+                   <td> {{$family->Resident_relate2}} </td>
+                   <td> {{$family->Resident_age2}} </td>
+                   <td> {{$family->Resident_name2}} </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->Resident_job3}} </td>
+                   <td> {{$family->Resident_relate3}} </td>
+                   <td> {{$family->Resident_age3}} </td>
+                   <td> {{$family->Resident_name3}} </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->Resident_job4}} </td>
+                   <td> {{$family->Resident_relate4}} </td>
+                   <td> {{$family->Resident_age4}} </td>
+                   <td> {{$family->Resident_name4}} </td>
+                 </tr>
+
+                 <tr>
+                    <td> {{$family->Resident_job5}} </td>
+                    <td> {{$family->Resident_relate5}} </td>
+                    <td> {{$family->Resident_age5}} </td>
+                    <td> {{$family->Resident_name5}} </td>
+                  </tr>
+
+                  <tr>
+                    <td> {{$family->Resident_job6}} </td>
+                    <td> {{$family->Resident_relate6}} </td>
+                    <td> {{$family->Resident_age6}} </td>
+                    <td> {{$family->Resident_name6}} </td>
+                  </tr>
+
+             </tbody>
+           </table>
 
            <h1 class="text-center m-5">  الحالة التعليمية </h1>
            <table class="table fw-bolder fs-3 table-bordered  table-responsive">
@@ -271,30 +305,67 @@
           </table>
 
            <h1 class="text-center m-5">  مستوي التعليم للابناء </h1>
-           <table class="table fw-bolder fs-3 table-bordered  table-responsive">
-            <thead class="table-light">
-               <tr>
-                  <th scope="col"> <h2>  {{$case->child1_name}} </h2> </th>
-                <th scope="col"> <h2> الاسم </h2> </th>
-                </tr>
+           <table class="table fw-bolder fs-3 table-bordered table-responsive">
+             <thead class="table-light">
                 <tr>
-                    <th scope="col"> <h2> {{$case->child1_level}} </h2></th>
-                    <th scope="col"> <h2>  الصف </h2> </th>
-                </tr>
+                   <th scope="col">  احتياجات الطالب  </th>
+                   <th scope="col">  المستوى الدراسي راسب -ضعيف- مقبول -جيد- جيد جدا- ممتاز </th>
+                   <th scope="col"> المدرسة </th>
+                   <th scope="col"> الصف </th>
+                   <th scope="col"> الاسم </th>
+                 </tr>
+             </thead>
+             <tbody>
                 <tr>
-                    <th scope="col"> <h2> {{$case->child1_school}} </h2></th>
-                    <th scope="col"> <h2> المدرسة </h2> </th>
-                </tr>
-                <tr>
-                    <th scope="col"> <h2> {{$case->child1_edu_level}} </h2></th>
-                    <th scope="col"> <h2>  المستوى الدراسي راسب -ضعيف- مقبول -جيد- جيد جدا- ممتاز  </h2> </th>
-                </tr>
-                <tr>
-                    <th scope="col"> <h2> {{$case->child1_need}} </h2></th>
-                    <th scope="col"> <h2> احتياجات الطالب </h2> </th>
-                </tr>
-            </thead>
-          </table>
+                   <td> {{$family->child1_need}} </td>
+                   <td> {{$family->child1_edu_level}} </td>
+                   <td> {{$family->child1_school}} </td>
+                   <td> {{$family->child1_level}}  </td>
+                   <td>  {{$family->child1_name}}  </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->child2_need}} </td>
+                   <td> {{$family->child2_edu_level}} </td>
+                   <td> {{$family->child2_school}} </td>
+                   <td>  {{$family->child2_level}}  </td>
+                   <td>  {{$family->child2_name}}  </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->child3_need}} </td>
+                   <td> {{$family->child3_edu_level}} </td>
+                   <td> {{$family->child3_school}} </td>
+                   <td>  {{$family->child3_level}}  </td>
+                   <td>  {{$family->child3_name}}  </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->child4_need}} </td>
+                   <td> {{$family->child4_edu_level}} </td>
+                   <td> {{$family->child4_school}} </td>
+                   <td>  {{$family->child4_level}}  </td>
+                   <td>  {{$family->child4_name}}  </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->child5_need}} </td>
+                   <td> {{$family->child5_edu_level}} </td>
+                   <td> {{$family->child5_school}} </td>
+                   <td> {{$family->child5_level}} </td>
+                   <td>  {{$family->child5_name}}  </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->child6_need}} </td>
+                   <td> {{$family->child6_edu_level}} </td>
+                   <td> {{$family->child6_school}} </td>
+                   <td> {{$family->child6_level}} </td>
+                   <td>  {{$family->child6_name}}  </td>
+                 </tr>
+
+             </tbody>
+           </table>
 
            <h1 class="text-center m-5">  الحالة الصحية </h1>
            <table class="table fw-bolder fs-3 table-bordered  table-responsive">
@@ -319,26 +390,60 @@
           </table>
 
            <h1 class="text-center m-5">  الحالة الصحية للاسرة </h1>
-           <table class="table fw-bolder fs-3 table-bordered  table-responsive">
-            <thead class="table-light">
-               <tr>
-                  <th scope="col"> <h2>  {{$case->health_name1}} </h2> </th>
-                <th scope="col"> <h2>  الاسم </h2> </th>
-                </tr>
+           <table class="table fw-bolder fs-3 table-bordered table-responsive">
+             <thead class="table-light">
                 <tr>
-                    <th scope="col"> <h2> {{$case->health_status1}} </h2></th>
-                    <th scope="col"> <h2>  الحالة الصحية  </h2> </th>
-                </tr>
-                <tr>
-                    <th scope="col"> <h2> {{$case->illness1}} </h2></th>
-                    <th scope="col"> <h2>  تشخيص المرض  </h2> </th>
-                </tr>
-                <tr>
-                    <th scope="col"> <h2> {{$case->need1}} </h2></th>
-                    <th scope="col"> <h2>   الاحتياج  </h2> </th>
-                </tr>
-            </thead>
-          </table>
+                   <th scope="col"> الاحتياج </th>
+                   <th scope="col">  تشخيص المرض  </th>
+                   <th scope="col">  الحالة الصحية  </th>
+                   <th scope="col"> الاسم </th>
+                 </tr>
+             </thead>
+             <tbody>
+                 <tr>
+                   <td> {{$family->need1}} </td>
+                   <td> {{$family->illness1}} </td>
+                   <td> {{$family->health_status1}} </td>
+                   <td> {{$family->health_name1}} </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->need2}} </td>
+                   <td> {{$family->illness2}} </td>
+                   <td> {{$family->health_status2}} </td>
+                   <td> {{$family->health_name2}} </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->need3}} </td>
+                   <td> {{$family->illness3}} </td>
+                   <td> {{$family->health_status3}} </td>
+                   <td> {{$family->health_name3}} </td>
+                 </tr>
+
+                 <tr>
+                   <td> {{$family->need4}} </td>
+                   <td> {{$family->illness4}} </td>
+                   <td> {{$family->health_status4}} </td>
+                   <td> {{$family->health_name4}} </td>
+                 </tr>
+
+                 <tr>
+                    <td> {{$family->need5}} </td>
+                    <td> {{$family->illness5}} </td>
+                    <td> {{$family->health_status5}} </td>
+                    <td> {{$family->health_name5}} </td>
+                  </tr>
+
+                  <tr>
+                    <td> {{$family->need6}} </td>
+                    <td> {{$family->illness6}} </td>
+                    <td> {{$family->health_status6}} </td>
+                    <td> {{$family->health_name6}} </td>
+                  </tr>
+
+             </tbody>
+           </table>
 
            <h1 class="text-center m-5">  الجانب التربوي </h1>
            <table class="table fw-bolder fs-3 table-bordered  table-responsive">

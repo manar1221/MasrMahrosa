@@ -5,11 +5,13 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use App\Models\Deforsed;
+use App\Models\Fmaily;
 
 class EditCaseComponent extends Component
 {
     use WithFileUploads;
 
+    public $deforsecase_id;
     public $case_id;
     public $name;
     public $national_id;
@@ -18,76 +20,76 @@ class EditCaseComponent extends Component
     public $period;
     public $address;
 
-    public $home_add = 'regular';
-    public $home_status = 'old';
-    public $home_des= 'not_healthy';
-    public $room_no= '2room';
-    public $bathroom= 'private';
+    public $home_add = 'عشوائية';
+    public $home_status = 'ايجار جديد';
+    public $home_des = 'صحي';
+    public $room_no = 'حجرتين';
+    public $bathroom = 'خاصة';
 
-    public $number_of_gas_stove= '1';
-    public $gas_stove_status= 'good';
+    public $number_of_gas_stove = '1';
+    public $gas_stove_status = 'سليمة';
     public $gas_stove_note;
 
-    public $washing_machine_no= '1';
-    public $washing_machine_status= 'good';
+    public $washing_machine_no = '1';
+    public $washing_machine_status = 'سليمة';
     public $washing_machine_note;
 
-    public $Refrigerator_no= '1';
-    public $Refrigerator_status= 'good';
+    public $Refrigerator_no = '1';
+    public $Refrigerator_status = 'سليمة';
     public $Refrigerator_note;
 
-    public $tv_no= '1';
-    public $tv_status= 'good';
+    public $tv_no = '1';
+    public $tv_status = 'سليمة';
     public $tv_note;
 
-    public $fans_no= '1';
-    public $fans_status= 'good';
+    public $fans_no = '1';
+    public $fans_status = 'سليمة';
     public $fans_note;
 
-    public $heater_no= '1';
-    public $heater_status= 'good';
+    public $heater_no = '1';
+    public $heater_status = 'سليمة';
     public $heater_note;
 
-    public $bed_no= '1';
-    public $bed_status= 'good';
-    public $bed_enough = 'not_enough';
+    public $bed_no = '1';
+    public $bed_status = 'سليمة';
+    public $bed_enough = 'غير كافى';
     public $bed_note;
 
-    public $cupboard_no= '1';
-    public $cupboard_status= 'good';
-    public $cupboard_enough = 'not_enough';
+    public $cupboard_no = '1';
+    public $cupboard_status = 'سليمة';
+    public $cupboard_enough = 'غير كافى';
     public $cupboard_note;
 
-    public $living_no= '1';
-    public $living_status= 'good';
-    public $living_enough = 'not_enough';
+    public $living_no = '1';
+    public $living_status = 'سليمة';
+    public $living_enough = 'غير كافى';
     public $living_note;
 
-    public $chair_no= '1';
-    public $chair_status= 'good';
-    public $chair_enough = 'not_enough';
+    public $chair_no = '1';
+    public $chair_status = 'سليمة';
+    public $chair_enough = 'غير كافى';
     public $chair_note;
 
-    public $table_no= '1';
-    public $table_status= 'good';
-    public $table_enough = 'not_enough';
+    public $table_no = '1';
+    public $table_status = 'سليمة';
+    public $table_enough = 'غير كافى';
     public $table_note;
 
-    public $Plumbing_status = 'good';
+    public $Plumbing_status = 'سليمة';
     public $Plumbing_note;
 
-    public $elec_status = 'good';
+    public $elec_status = 'سليمة';
     public $elec_note;
 
-    public $Carpentry_status = 'good';
+    public $Carpentry_status = 'سليمة';
     public $Carpentry_note;
 
-    public $Restorations_status = 'good';
+    public $Restorations_status = 'سليمة';
     public $Restorations_note;
 
-    public $breadwinner = 'mother';
+    public $breadwinner = 'الام';
 
-    public $mother_status = 'divorced';
+    public $mother_status = 'مطلقة';
 
     public $divorce_date ;
 
@@ -96,9 +98,24 @@ class EditCaseComponent extends Component
     public $Resident_relate1;
     public $Resident_job1;
 
-    public $edu_level = 'middle';
-    public $reed_write_status = 'good';
-    public $reed_write_want = 'dont_want';
+    public $Resident_name2;
+    public $Resident_age2;
+    public $Resident_relate2;
+    public $Resident_job2;
+
+    public $Resident_name3;
+    public $Resident_age3;
+    public $Resident_relate3;
+    public $Resident_job3;
+
+    public $Resident_name4;
+    public $Resident_age4;
+    public $Resident_relate4;
+    public $Resident_job4;
+
+    public $edu_level = 'امية';
+    public $reed_write_status = 'تستطيع القراءة';
+    public $reed_write_want = 'لا ارغب';
 
     public $child1_name;
     public $child1_level;
@@ -106,10 +123,40 @@ class EditCaseComponent extends Component
     public $child1_edu_level;
     public $child1_need;
 
-    public $health_status = 'good';
-    public $treatment = 'irregular';
-    public $treatment_status = 'irregular';
-    public $treatment_not_subscribed = 'yes';
+    public $child2_name;
+    public $child2_level;
+    public $child2_school;
+    public $child2_edu_level;
+    public $child2_need;
+
+    public $child3_name;
+    public $child3_level;
+    public $child3_school;
+    public $child3_edu_level;
+    public $child3_need;
+
+    public $child4_name;
+    public $child4_level;
+    public $child4_school;
+    public $child4_edu_level;
+    public $child4_need;
+
+    public $child5_name;
+    public $child5_level;
+    public $child5_school;
+    public $child5_edu_level;
+    public $child5_need;
+
+    public $child6_name;
+    public $child6_level;
+    public $child6_school;
+    public $child6_edu_level;
+    public $child6_need;
+
+    public $health_status = 'اصابات';
+    public $treatment = 'غير منتظم';
+    public $treatment_status = 'يتم شرائه علي نفقة الام';
+    public $treatment_not_subscribed = 'نعم';
 
 
     public $health_name1;
@@ -117,11 +164,26 @@ class EditCaseComponent extends Component
     public $illness1;
     public $need1;
 
-    public $problem_solve = 'insults';
-    public $child_reward = 'Dont_reward';
-    public $help_problem = 'grandma';
-    public $problems = 'no';
-    public $what_problems = 'nothing';
+    public $health_name2;
+    public $health_status2;
+    public $illness2;
+    public $need2;
+
+    public $health_name3;
+    public $health_status3;
+    public $illness3;
+    public $need3;
+
+    public $health_name4;
+    public $health_status4;
+    public $illness4;
+    public $need4;
+
+    public $problem_solve = 'السباب';
+    public $child_reward = 'لاتكافئ';
+    public $help_problem = 'الجدة';
+    public $problems = 'لا';
+    public $what_problems = 'لايوجد';
 
     public $expense_dad ;
     public $salary;
@@ -136,17 +198,18 @@ class EditCaseComponent extends Component
 
     public $breadwinner_job;
 
-    public $old_projects = 'yes';
-    public $project_type = 'grocery';
-    public $project_want = 'yes';
-    public $project_want_type = 'grocery';
+    public $old_projects = 'لا';
+    public $project_type = 'اخري';
+    public $project_want = 'نعم';
+    public $project_want_type = 'بقالة';
 
-    public function mount($case_id)
+    public function mount($deforsecase_id)
     {
-        $case = Deforsed::find($case_id);
+        $case = Deforsed::find($deforsecase_id);
+        $this->deforsecase_id =  $case->id ;
         $this->case_id =  $case->case_id ;
         $this->name =  $case->name ;
-        $this->national_id = $case->national_id;
+        $this->national_id = $case->national_id  ;
         $this->age = $case->age  ;
         $this->phone =  $case->phone ;
         $this->period =  $case->period ;
@@ -225,30 +288,14 @@ class EditCaseComponent extends Component
 
         $this->divorce_date = $case->divorce_date  ;
 
-        $this->Resident_name1 = $case->Resident_name1  ;
-        $this->Resident_age1 = $case->Resident_age1  ;
-        $this->Resident_relate1 = $case->Resident_relate1  ;
-        $this->Resident_job1 = $case->Resident_job1  ;
-
         $this->edu_level = $case->edu_level  ;
         $this->reed_write_status = $case->reed_write_status  ;
         $this->reed_write_want = $case->reed_write_want  ;
-
-        $this->child1_name = $case->child1_name  ;
-        $this->child1_level = $case->child1_level  ;
-        $this->child1_school = $case->child1_school  ;
-        $this->child1_edu_level = $case->child1_edu_level  ;
-        $this->child1_need = $case->child1_need  ;
 
         $this->health_status = $case->health_status  ;
         $this->treatment = $case->treatment  ;
         $this->treatment_status =  $case->treatment_status ;
         $this->treatment_not_subscribed = $case->treatment_not_subscribed  ;
-
-        $this->health_name1 = $case->health_name1  ;
-        $this->health_status1 = $case->health_status1  ;
-        $this->illness1 = $case->illness1  ;
-        $this->need1 = $case->need1  ;
 
         $this->problem_solve = $case->problem_solve  ;
         $this->child_reward = $case->child_reward  ;
@@ -272,6 +319,125 @@ class EditCaseComponent extends Component
         $this->project_type = $case->project_type  ;
         $this->project_want = $case->project_want  ;
         $this->project_want_type = $case->project_want_type ;
+
+        $family = Fmaily::find($deforsecase_id);
+        if(!($this->Resident_name1 && $this->Resident_age1 && $this->Resident_relate1 && $this->Resident_job1))
+        {
+            $this->Resident_name1 = $family->Resident_name1  ;
+            $this->Resident_age1 = $family->Resident_age1  ;
+            $this->Resident_relate1 = $family->Resident_relate1  ;
+            $this->Resident_job1 = $family->Resident_job1  ;
+        }
+
+        if(!($this->Resident_name2 && $this->Resident_age2 && $this->Resident_relate2 && $this->Resident_job2))
+        {
+            $this->Resident_name2 = $family->Resident_name2  ;
+            $this->Resident_age2 = $family->Resident_age2  ;
+            $this->Resident_relate2 = $family->Resident_relate2  ;
+            $this->Resident_job2 = $family->Resident_job2  ;
+        }
+
+        if(!($this->Resident_name3 && $this->Resident_age3 && $this->Resident_relate3 && $this->Resident_job3))
+        {
+            $this->Resident_name3 = $family->Resident_name3  ;
+            $this->Resident_age3 = $family->Resident_age3  ;
+            $this->Resident_relate3 = $family->Resident_relate3  ;
+            $this->Resident_job3 = $family->Resident_job3  ;
+        }
+
+        if(!($this->Resident_name4 && $this->Resident_age4 && $this->Resident_relate4 && $this->Resident_job4))
+        {
+            $this->Resident_name4 = $family->Resident_name4  ;
+            $this->Resident_age4 = $family->Resident_age4  ;
+            $this->Resident_relate4 = $family->Resident_relate4  ;
+            $this->Resident_job4 = $family->Resident_job4  ;
+        }
+
+        if(!($family->child1_name && $family->child1_level && $family->child1_school && $family->child1_edu_level && $family->child1_need))
+        {
+            $this->child1_name = $family->child1_name  ;
+            $this->child1_level = $family->child1_level  ;
+            $this->child1_school = $family->child1_school  ;
+            $this->child1_edu_level = $family->child1_edu_level  ;
+            $this->child1_need = $family->child1_need  ;
+        }
+
+        if(!($family->child2_name && $family->child2_level && $family->child2_school && $family->child2_edu_level && $family->child2_need))
+        {
+            $this->child2_name = $family->child2_name  ;
+            $this->child2_level = $family->child2_level  ;
+            $this->child2_school = $family->child2_school  ;
+            $this->child2_edu_level = $family->child2_edu_level  ;
+            $this->child2_need = $family->child2_need  ;
+        }
+
+        if(!($family->child3_name && $family->child3_level && $family->child3_school && $family->child3_edu_level && $family->child3_need))
+        {
+            $this->child3_name = $family->child3_name  ;
+            $this->child3_level = $family->child3_level  ;
+            $this->child3_school = $family->child3_school  ;
+            $this->child3_edu_level = $family->child3_edu_level  ;
+            $this->child3_need = $family->child3_need  ;
+        }
+
+        if(!($family->child4_name && $family->child4_level && $family->child4_school && $family->child4_edu_level && $family->child4_need))
+        {
+            $this->child4_name = $family->child4_name  ;
+            $this->child4_level = $family->child4_level  ;
+            $this->child4_school = $family->child4_school  ;
+            $this->child4_edu_level = $family->child4_edu_level  ;
+            $this->child4_need = $family->child4_need  ;
+        }
+
+        if(!($family->child5_name && $family->child5_level && $family->child5_school && $family->child5_edu_level && $family->child5_need))
+        {
+            $this->child5_name = $family->child5_name  ;
+            $this->child5_level = $family->child5_level  ;
+            $this->child5_school = $family->child5_school  ;
+            $this->child5_edu_level = $family->child5_edu_level  ;
+            $this->child5_need = $family->child5_need  ;
+        }
+
+        if(!($family->child6_name && $family->child6_level && $family->child6_school && $family->child6_edu_level && $family->child6_need))
+        {
+            $this->child6_name = $family->child6_name  ;
+            $this->child6_level = $family->child6_level  ;
+            $this->child6_school = $family->child6_school  ;
+            $this->child6_edu_level = $family->child6_edu_level  ;
+            $this->child6_need = $family->child6_need  ;
+        }
+
+        if(!($family->health_name1 && $family->health_status1 && $family->illness1 && $family->need1))
+        {
+            $this->health_name1 = $family->health_name1  ;
+            $this->health_status1 = $family->health_status1  ;
+            $this->illness1 = $family->illness1  ;
+            $this->need1 = $family->need1  ;
+        }
+
+        if(!($family->health_name2 && $family->health_status2 && $family->illness2 && $family->need2))
+        {
+            $this->health_name2 = $family->health_name2  ;
+            $this->health_status2 = $family->health_status2  ;
+            $this->illness2 = $family->illness2  ;
+            $this->need2 = $family->need2  ;
+        }
+
+        if(!($family->health_name3 && $family->health_status3 && $family->illness3 && $family->need3))
+        {
+            $this->health_name3 = $family->health_name3  ;
+            $this->health_status3 = $family->health_status3  ;
+            $this->illness3 = $family->illness3  ;
+            $this->need3 = $family->need3  ;
+        }
+
+        if(!($family->health_name4 && $family->health_status4 && $family->illness4 && $family->need4))
+        {
+            $this->health_name4 = $family->health_name4  ;
+            $this->health_status4 = $family->health_status4  ;
+            $this->illness4 = $family->illness4  ;
+            $this->need4 = $family->need4  ;
+        }
     }
 
     public function updateCase()
@@ -285,7 +451,7 @@ class EditCaseComponent extends Component
             'address' => 'required',
             'mother_status' => 'required',
         ]);
-        $case= Deforsed::find($this->case_id);
+        $case= Deforsed::find($this->deforsecase_id);
         $case->case_id =$this->case_id ;
         $case->name =$this->name ;
         $case->national_id =$this->national_id ;
@@ -367,30 +533,14 @@ class EditCaseComponent extends Component
 
         $case->divorce_date =$this->divorce_date ;
 
-        $case->Resident_name1 =$this->Resident_name1 ;
-        $case->Resident_age1 =$this->Resident_age1 ;
-        $case->Resident_relate1 =$this->Resident_relate1 ;
-        $case->Resident_job1 =$this->Resident_job1 ;
-
         $case->edu_level =$this->edu_level ;
         $case->reed_write_status =$this->reed_write_status ;
         $case->reed_write_want =$this->reed_write_want ;
-
-        $case->child1_name =$this->child1_name ;
-        $case->child1_level =$this->child1_level ;
-        $case->child1_school =$this->child1_school ;
-        $case->child1_edu_level =$this->child1_edu_level ;
-        $case->child1_need =$this->child1_need ;
 
         $case->health_status =$this->health_status ;
         $case->treatment =$this->treatment ;
         $case->treatment_status =$this->treatment_status ;
         $case->treatment_not_subscribed =$this->treatment_not_subscribed ;
-
-        $case->health_name1 =$this->health_name1 ;
-        $case->health_status1 =$this->health_status1 ;
-        $case->illness1 =$this->illness1 ;
-        $case->need1 =$this->need1 ;
 
         $case->problem_solve =$this->problem_solve ;
         $case->child_reward =$this->child_reward ;
@@ -415,7 +565,128 @@ class EditCaseComponent extends Component
         $case->project_want =$this->project_want ;
         $case->project_want_type =$this->project_want_type ;
 
+        $family = Fmaily::find($this->deforsecase_id);
+        $family->case_id =$case->case_id ;
+        if(!($family->Resident_name1 && $family->Resident_age1 && $family->Resident_relate1 && $family->Resident_job1))
+        {
+            $family->Resident_name1 =$this->Resident_name1 ;
+            $family->Resident_age1 =$this->Resident_age1 ;
+            $family->Resident_relate1 =$this->Resident_relate1 ;
+            $family->Resident_job1 =$this->Resident_job1 ;
+        }
+
+        if(!($family->Resident_name2 && $family->Resident_age2 && $family->Resident_relate2 && $family->Resident_job2))
+        {
+            $family->Resident_name2 =$this->Resident_name2 ;
+            $family->Resident_age2 =$this->Resident_age2 ;
+            $family->Resident_relate2 =$this->Resident_relate2 ;
+            $family->Resident_job2 =$this->Resident_job2 ;
+        }
+
+        if(!($family->Resident_name3 && $family->Resident_age3 && $family->Resident_relate3 && $family->Resident_job3))
+        {
+            $family->Resident_name3 =$this->Resident_name3 ;
+            $family->Resident_age3 =$this->Resident_age3 ;
+            $family->Resident_relate3 =$this->Resident_relate3 ;
+            $family->Resident_job3 =$this->Resident_job3 ;
+         }
+
+         if(!($family->Resident_name4 && $family->Resident_age4 && $family->Resident_relate4 && $family->Resident_job4))
+         {
+            $family->Resident_name4 =$this->Resident_name4 ;
+            $family->Resident_age4 =$this->Resident_age4 ;
+            $family->Resident_relate4 =$this->Resident_relate4 ;
+            $family->Resident_job4 =$this->Resident_job4 ;
+         }
+
+         if(!($family->child1_name && $family->child1_level && $family->child1_school && $family->child1_edu_level && $family->child1_need))
+        {
+            $family->child1_name =$this->child1_name ;
+            $family->child1_level =$this->child1_level ;
+            $family->child1_school =$this->child1_school ;
+            $family->child1_edu_level =$this->child1_edu_level ;
+            $family->child1_need =$this->child1_need ;
+        }
+
+        if(!($family->child2_name && $family->child2_level && $family->child2_school && $family->child2_edu_level && $family->child2_need))
+        {
+            $family->child2_name =$this->child2_name ;
+            $family->child2_level =$this->child2_level ;
+            $family->child2_school =$this->child2_school ;
+            $family->child2_edu_level =$this->child2_edu_level ;
+            $family->child2_need =$this->child2_need ;
+        }
+
+        if(!($family->child3_name && $family->child3_level && $family->child3_school && $family->child3_edu_level && $family->child3_need))
+        {
+            $family->child3_name =$this->child3_name ;
+            $family->child3_level =$this->child3_level ;
+            $family->child3_school =$this->child3_school ;
+            $family->child3_edu_level =$this->child3_edu_level ;
+            $family->child3_need =$this->child3_need ;
+        }
+
+        if(!($family->child4_name && $family->child4_level && $family->child4_school && $family->child4_edu_level && $family->child4_need))
+        {
+            $family->child4_name =$this->child4_name ;
+            $family->child4_level =$this->child4_level ;
+            $family->child4_school =$this->child4_school ;
+            $family->child4_edu_level =$this->child4_edu_level ;
+            $family->child4_need =$this->child4_need ;
+        }
+
+        if(!($family->child5_name && $family->child5_level && $family->child5_school && $family->child5_edu_level && $family->child5_need))
+        {
+            $family->child5_name =$this->child5_name ;
+            $family->child5_level =$this->child5_level ;
+            $family->child5_school =$this->child5_school ;
+            $family->child5_edu_level =$this->child5_edu_level ;
+            $family->child5_need =$this->child5_need ;
+        }
+
+        if(!($family->child6_name && $family->child6_level && $family->child6_school && $family->child6_edu_level && $family->child6_need))
+        {
+            $family->child6_name =$this->child6_name ;
+            $family->child6_level =$this->child6_level ;
+            $family->child6_school =$this->child6_school ;
+            $family->child6_edu_level =$this->child6_edu_level ;
+            $family->child6_need =$this->child6_need ;
+        }
+
+        if(!($family->health_name1 && $family->health_status1 && $family->illness1 && $family->need1))
+        {
+            $family->health_name1 =$this->health_name1 ;
+            $family->health_status1 =$this->health_status1 ;
+            $family->illness1 =$this->illness1 ;
+            $family->need1 =$this->need1 ;
+        }
+
+        if(!($family->health_name2 && $family->health_status2 && $family->illness2 && $family->need2))
+        {
+            $family->health_name2=$this->health_name2;
+            $family->health_status2=$this->health_status2;
+            $family->illness2=$this->illness2;
+            $family->need2=$this->need2;
+        }
+
+        if(!($family->health_name3 && $family->health_status3 && $family->illness3 && $family->need3))
+        {
+            $family->health_name3 =$this->health_name3 ;
+            $family->health_status3 =$this->health_status3 ;
+            $family->illness3 =$this->illness3 ;
+            $family->need3 =$this->need3 ;
+        }
+
+        if(!($family->health_name4 && $family->health_status4 && $family->illness4 && $family->need4))
+        {
+            $family->health_name4 =$this->health_name4 ;
+            $family->health_status4 =$this->health_status4 ;
+            $family->illness4 =$this->illness4 ;
+            $family->need4 =$this->need4 ;
+        }
+
         $case->save();
+        $case->fmaily()->saveMany([$family]);
         session()->flash('message','Case has been updated!');
         return redirect()->route('deforsed');
     }

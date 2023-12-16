@@ -9,13 +9,20 @@ use Livewire\WithPagination;
 class DeforsedComponent extends Component
 {
     use WithPagination;
-    public $case_id;
+    public $deforse_id;
 
     public function deleteCase()
     {
-        $deforse_case = Deforsed::find($this->case_id);
+        $deforse_case = Deforsed::find($this->deforse_id);
+
+        if ($deforse_case) {
         $deforse_case->delete();
         session()->flash('message','Case has been deleted!');
+        }
+        else {
+            // Handle the case where the record doesn't exist
+            session()->flash('message', 'Case not found or already deleted.');
+        }
     }
 
     public function render()

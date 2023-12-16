@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Deforsed;
+use App\Models\Fmaily;
 use Livewire\Component;
 
 class DetailsComponent extends Component
@@ -17,6 +18,7 @@ class DetailsComponent extends Component
     public function render()
     {
         $case = Deforsed::where('case_id',$this->case_id)->first();
-        return view('livewire.details-component',['case' => $case]);
+        $family = Fmaily::where('case_id',$this->case_id)->first();
+        return view('livewire.details-component',['case' => $case, 'family' => $family]);
     }
 }

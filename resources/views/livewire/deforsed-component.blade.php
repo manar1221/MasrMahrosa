@@ -22,7 +22,7 @@
               <table class="table fw-bolder fs-3 table-bordered  table-responsive">
                  <thead class="table-light">
                     <tr>
-                        <th scope="col"> تعديل / حذف / عرض</th>
+                        <th scope="col">  تعديل / عرض  / حذف </th>
                        <th scope="col"> السن </th>
                        <th scope="col"> اسم الحالة </th>
                        <th scope="col"> كود الحالة </th>
@@ -36,9 +36,9 @@
                     @foreach($deforse_cases as $deforse_case)
                       <tr>
                         <td>
-                          <a href="{{route('case.edit',['case_id'=>$deforse_case->case_id])}}" class="text-info text-decoration-none"> تعديل </a> /
-                          <a href="#" onclick="deleteConfirmation({{ $deforse_case->case_id }})" class="text-danger text-decoration-none"> حذف </a> /
-                          <a href="{{route('case.details',['case_id'=>$deforse_case->case_id])}}" class="text-success text-decoration-none"> عرض </a>
+                          <a href="{{route('case.edit',['deforsecase_id'=>$deforse_case->id])}}" class="text-info text-decoration-none"> تعديل </a> /
+                          <a href="{{route('case.details',['case_id'=>$deforse_case->case_id])}}" class="text-success text-decoration-none"> عرض </a> /
+                          <a href="#" onclick="deleteConfirmation({{ $deforse_case->id }})" class="text-danger text-decoration-none"> حذف </a>
                         </td>
                         <td> {{$deforse_case->age}} </td>
                         <td> {{$deforse_case->name}} </td>
@@ -63,8 +63,8 @@
                 <div class="row">
                     <div class="col-md-12 text-center">
                         <h4 class="pb-3"> Do you want to delete this record? </h4>
-                        <button type="button" class="cbtn btn-secondary" data-bs-toggle="modal" data-bs-target="#deleteConfirmation">cancel</button>
-                        <button type="button"  class="cbtn btn-danger" onclick="deleteCase()">delete</button>
+                        <button type="button" class="cbtn btn btn-secondary fs-4" data-bs-toggle="modal" data-bs-target="#deleteConfirmation">cancel</button>
+                        <button type="button"  class="cbtn btn btn-danger fs-4" onclick="deleteCase()">delete</button>
                     </div>
                 </div>
             </div>
@@ -74,9 +74,9 @@
 
 @push('scripts')
     <script>
-        function deleteConfirmation(case_id)
+        function deleteConfirmation(id)
         {
-            @this.set('case_id',case_id);
+            @this.set('deforse_id',id);
             $('#deleteConfirmation').modal('show');
         }
 
