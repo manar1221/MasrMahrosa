@@ -566,7 +566,7 @@
                    @error('Restorations_note')
                    <p class="text-danger">{{ $message }}</p>
                   @enderror
-                </div>
+                </div>>
              </div>
 
              <h1 class="text-center"> الحالة الاجتماعية للأسرة  </h1>
@@ -584,8 +584,8 @@
 
              <label for="mother_status" class="form-lable fw-bolder fs-3"> الحالة الاجتماعية للام </label>
                    <select name="mother_status" id="" class="form-control text-end fs-3" placeholder="" wire:model="mother_status">
-                      {{-- <option value="ارملة >"ارملة  </option> --}}
-                      <option value="مطلقة"> مطلقة </option>
+                      <option value="ارملة"> ارملة </option>
+                      {{-- <option value="مطلقة"> مطلقة </option> --}}
                       <option value="هجر"> هجر </option>
                       <option value="متزوجة"> متزوجة </option>
                       <option value="اخري"> اخري </option>
@@ -594,11 +594,11 @@
                    <p class="text-danger">{{ $message }}</p>
                   @enderror
 
-             <label for="divorce_date" class="form-lable fw-bolder fs-3"> في حالة الطلاق تاريخ الطلاق  </label>
+             {{-- <label for="divorce_date" class="form-lable fw-bolder fs-3"> في حالة الطلاق تاريخ الطلاق  </label>
              <input type="date" name="divorce_date" class="form-control text-end fs-3" placeholder="" wire:model="divorce_date">
              @error('divorce_date')
              <p class="text-danger">{{ $message }}</p>
-            @enderror
+            @enderror --}}
 
              <h1 class="text-center mt-3">  المقيمين بالسكن وعلاقاتهم   </h1>
              <table class="table fw-bolder fs-3 table-bordered table-responsive">
@@ -1298,8 +1298,6 @@
               @error('project_want_type')
                     <p class="text-danger">{{ $message }}</p>
                    @enderror
-
-             {{-- <input type="file" name="upload" accept="application/pdf"/> --}}
 
              <button type="submit" class="cbtn btn-primary float-start w-auto"> إضافة </button>
          </form>

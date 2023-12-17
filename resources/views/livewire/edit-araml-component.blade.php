@@ -15,10 +15,7 @@
          </div>
        </div>
        <div class="card-body">
-        @if (Session::has('message'))
-            <div class="alert alert-success" role="alert">{{Session::get('message')}}</div>
-        @endif
-          <form wire:submit.prevent="addCase">
+          <form wire:submit.prevent="updateCase">
              <div class="m-5">
                 <label for="case_id" class="from-lable fw-bolder fs-3"> كود الحالة </label>
                 <input type="text" name="case_id" class="form-control text-end fs-3" placeholder="" wire:model="case_id">
@@ -78,7 +75,7 @@
              <h1 class="text-center"> المسكن  </h1>
 
              <div class="m-5">
-                <label for="home_add" class="form-lable fw-bolder fs-3"> المنطقة السكنية  </label>
+                <label for="home_add" class="form-lable fw-bolder fs-3" > المنطقة السكنية  </label>
                 <select name="home_add" id="" class="form-control text-end fs-3" wire:model="home_add">
                     <option value="مدينة"> مدينة </option>
                     <option value="عشوائية"> عشوائية </option>
@@ -139,7 +136,7 @@
              <div class="d-flex flex-fill">
                 <div class="m-5 bg-secondary bg-opacity-25 p-3">
                    <h1> بوتاجاز </h1>
-                   <label for="number_of_gas_stove" class="form-lable fw-bolder fs-3"> العدد </label>
+                   <label for=" number_of_gas_stove " class="form-lable fw-bolder fs-3"> العدد </label>
                    <select name="number_of_gas_stove" id="" class="form-control text-end fs-3" wire:model="number_of_gas_stove">
                       <option value="0"> 0 </option>
                       <option value="1"> 1 </option>
@@ -331,7 +328,7 @@
 
                    <label for="bed_enough" class="form-lable fw-bolder fs-3"> مدي الكفاية </label>
                    <select name="bed_enough" id="" class="form-control text-end fs-3" wire:model="bed_enough">
-                      <option value="كافى"> كافى  </option>
+                       <option value="كافى"> كافى  </option>
                       <option value="غير كافى"> غير كافى </option>
                    </select>
                    @error('bed_enough')
@@ -368,8 +365,8 @@
 
                    <label for="cupboard_enough" class="form-lable fw-bolder fs-3"> مدي الكفاية </label>
                    <select name="cupboard_enough" id="" class="form-control text-end fs-3" wire:model="cupboard_enough">
-                      <option value="كافى"> كافى  </option>
-                      <option value="غير كافى"> غير كافى </option>
+                    <option value="كافى"> كافى  </option>
+                    <option value="غير كافى"> غير كافى </option>
                    </select>
                    @error('cupboard_enough')
                    <p class="text-danger">{{ $message }}</p>
@@ -405,8 +402,8 @@
 
                    <label for="living_enough" class="form-lable fw-bolder fs-3"> مدي الكفاية </label>
                    <select name="living_enough" id="" class="form-control text-end fs-3" wire:model="living_enough">
-                      <option value="كافى"> كافى  </option>
-                      <option value="غير كافى"> غير كافى </option>
+                    <option value="كافى"> كافى  </option>
+                    <option value="غير كافى"> غير كافى </option>
                    </select>
                    @error('living_enough')
                    <p class="text-danger">{{ $message }}</p>
@@ -442,8 +439,8 @@
 
                    <label for="chair_enough" class="form-lable fw-bolder fs-3"> مدي الكفاية </label>
                    <select name="chair_enough" id="" class="form-control text-end fs-3" wire:model="chair_enough">
-                      <option value="كافى"> كافى  </option>
-                      <option value="غير كافى"> غير كافى </option>
+                    <option value="كافى"> كافى  </option>
+                    <option value="غير كافى"> غير كافى </option>
                    </select>
                    @error('chair_enough')
                    <p class="text-danger">{{ $message }}</p>
@@ -470,17 +467,17 @@
 
                    <label for="table_status" class="form-lable fw-bolder fs-3"> الحالة </label>
                    <select name="table_status" id="" class="form-control text-end fs-3" wire:model="table_status">
-                      <option value="سليمة"> سليمة  </option>
-                      <option value="غير سليمة"> غير سليمة </option>
+                    <option value="سليمة"> سليمة  </option>
+                    <option value="غير سليمة"> غير سليمة </option>
                    </select>
                    @error('table_status')
                    <p class="text-danger">{{ $message }}</p>
                   @enderror
 
                    <label for="table_enough" class="form-lable fw-bolder fs-3"> مدي الكفاية </label>
-                   <select name="table_enough" id="" class="form-control text-end fs-3" wire:model="table_enough">>
-                      <option value="كافى"> كافى  </option>
-                      <option value="غير كافى"> غير كافى </option>
+                   <select name="table_enough" id="" class="form-control text-end fs-3" wire:model="table_enough">
+                    <option value="كافى"> كافى  </option>
+                    <option value="غير كافى"> غير كافى </option>
                    </select>
                    @error('table_enough')
                    <p class="text-danger">{{ $message }}</p>
@@ -500,8 +497,8 @@
                    <h1> السباكة </h1>
                    <label for="Plumbing_status" class="form-lable fw-bolder fs-3"> الحالة </label>
                    <select name="Plumbing_status" id="" class="form-control text-end fs-3" wire:model="Plumbing_status">
-                      <option value="سليمة"> سليمة  </option>
-                      <option value="غير سليمة"> غير سليمة </option>
+                    <option value="سليمة"> سليمة  </option>
+                    <option value="غير سليمة"> غير سليمة </option>
                    </select>
                    @error('Plumbing_status')
                    <p class="text-danger">{{ $message }}</p>
@@ -518,8 +515,8 @@
                    <h1> الكهرباء </h1>
                    <label for="elec_status" class="form-lable fw-bolder fs-3"> الحالة </label>
                    <select name="elec_status" id="" class="form-control text-end fs-3" wire:model="elec_status">
-                      <option value="سليمة"> سليمة  </option>
-                      <option value="غير سليمة"> غير سليمة </option>
+                    <option value="سليمة"> سليمة  </option>
+                    <option value="غير سليمة"> غير سليمة </option>
                    </select>
                    @error('elec_status')
                    <p class="text-danger">{{ $message }}</p>
@@ -536,8 +533,8 @@
                    <h1> النجارة  </h1>
                    <label for="Carpentry_status" class="form-lable fw-bolder fs-3"> الحالة </label>
                    <select name="Carpentry_status" id="" class="form-control text-end fs-3" wire:model="Carpentry_status">
-                      <option value="سليمة"> سليمة  </option>
-                      <option value="غير سليمة"> غير سليمة </option>
+                    <option value="سليمة"> سليمة  </option>
+                    <option value="غير سليمة"> غير سليمة </option>
                    </select>
                    @error('Carpentry_status')
                    <p class="text-danger">{{ $message }}</p>
@@ -554,8 +551,8 @@
                    <h1> الترميمات </h1>
                    <label for="Restorations_status" class="form-lable fw-bolder fs-3"> الحالة </label>
                    <select name="Restorations_status" id="" class="form-control text-end fs-3" wire:model="Restorations_status">
-                      <option value="سليمة"> سليمة  </option>
-                      <option value="غير سليمة"> غير سليمة </option>
+                    <option value="سليمة"> سليمة  </option>
+                    <option value="غير سليمة"> غير سليمة </option>
                    </select>
                    @error('Restorations_status')
                    <p class="text-danger">{{ $message }}</p>
@@ -566,13 +563,13 @@
                    @error('Restorations_note')
                    <p class="text-danger">{{ $message }}</p>
                   @enderror
-                </div>
+                </div>>
              </div>
 
              <h1 class="text-center"> الحالة الاجتماعية للأسرة  </h1>
              <label for="breadwinner" class="form-lable fw-bolder fs-3"> عائل الأسرة </label>
                    <select name="breadwinner" id="" class="form-control text-end fs-3" wire:model="breadwinner">
-                      <option value="الام"> الام  </option>
+                    <option value="الام"> الام  </option>
                       <option value="الجدة"> الجدة </option>
                       <option value="الخالة"> الخالة  </option>
                       <option value="العمة"> العمة </option>
@@ -583,18 +580,17 @@
                   @enderror
 
              <label for="mother_status" class="form-lable fw-bolder fs-3"> الحالة الاجتماعية للام </label>
-                   <select name="mother_status" id="" class="form-control text-end fs-3" placeholder="" wire:model="mother_status">
-                      {{-- <option value="ارملة >"ارملة  </option> --}}
-                      <option value="مطلقة"> مطلقة </option>
-                      <option value="هجر"> هجر </option>
-                      <option value="متزوجة"> متزوجة </option>
-                      <option value="اخري"> اخري </option>
+                   <select name="mother_status" id="" class="form-control text-end fs-3" wire:model="mother_status">
+                    <option value="مطلقة"> مطلقة </option>
+                    <option value="هجر"> هجر </option>
+                    <option value="متزوجة"> متزوجة </option>
+                    <option value="اخري"> اخري </option>
                    </select>
                    @error('mother_status')
                    <p class="text-danger">{{ $message }}</p>
                   @enderror
 
-             <label for="divorce_date" class="form-lable fw-bolder fs-3"> في حالة الطلاق تاريخ الطلاق  </label>
+             <label for="divorce_date" class="form-lable fw-bolder fs-3"> تاريخ الطلاق  </label>
              <input type="date" name="divorce_date" class="form-control text-end fs-3" placeholder="" wire:model="divorce_date">
              @error('divorce_date')
              <p class="text-danger">{{ $message }}</p>
@@ -725,7 +721,7 @@
              <h1 class="text-center mt-3"> الحالة التعليمية  </h1>
              <label for="edu_level" class="form-lable fw-bolder fs-3"> مستوي التعليم للعائل </label>
                    <select name="edu_level" id="" class="form-control text-end fs-3" wire:model="edu_level">
-                      <option value="مؤهل عالي"> مؤهل عالي </option>
+                    <option value="مؤهل عالي"> مؤهل عالي </option>
                       <option value="شهاده الثانويه العام"> شهاده الثانويه العام </option>
                       <option value="مؤهل متوسط"> مؤهل متوسط </option>
                       <option value="شهادة محو امية"> شهادة محو امية </option>
@@ -737,16 +733,16 @@
 
              <label for="reed_write_status" class="form-lable fw-bolder fs-3"> في حالة الامية  مدي قدرته علي القراءة والكتابة </label>
                    <select name="reed_write_status" id="" class="form-control text-end fs-3" wire:model="reed_write_status">
-                      <option value="تستطيع القراءة  "> تستطيع القراءة  </option>
+                    <option value="تستطيع القراءة  "> تستطيع القراءة  </option>
                       <option value="لا تستطيع القراءة">  لا تستطيع القراءة </option>
                    </select>
                    @error('reed_write_status')
                    <p class="text-danger">{{ $message }}</p>
                   @enderror
 
-             <label for="reed_write_want" class="form-lable fw-bolder fs-3"> في حالة الأمية مدي الرغبة في التعليم   </label>
+             <label for="reed_write_want" class="form-lable fw-bolder fs-3"> في حال الأمية مدي الرغبة في التعليم   </label>
                    <select name="reed_write_want" id="" class="form-control text-end fs-3" wire:model="reed_write_want">
-                      <option value="ارغب"> ارغب </option>
+                    <option value="ارغب"> ارغب </option>
                       <option value="لا ارغب"> لا ارغب </option>
                    </select>
                    @error('reed_write_want')
@@ -978,10 +974,11 @@
                 </tbody>
               </table>
 
+
              <h1 class="text-center mt-3"> الحالة الصحية </h1>
              <label for="health_status" class="form-lable fw-bolder fs-3"> الحالة  الصحية للعائل </label>
                    <select name="health_status" id="" class="form-control text-end fs-3" wire:model="health_status">
-                      <option value="صحة جيدة"> صحة جيدة </option>
+                    <option value="صحة جيدة"> صحة جيدة </option>
                       <option value="اصابات"> اصابات </option>
                       <option value="اعاقات"> اعاقات </option>
                       <option value="مرض مزمن"> مرض مزمن  </option>
@@ -992,7 +989,7 @@
 
              <label for="treatment" class="form-lable fw-bolder fs-3"> دورية صرف العلاج </label>
                    <select name="treatment" id="" class="form-control text-end fs-3" wire:model="treatment">
-                      <option value="منتظم شهري"> منتظم شهري </option>
+                    <option value="منتظم شهري"> منتظم شهري </option>
                       <option value="غير منتظم"> غير منتظم </option>
                       <option value="لايوجد"> لايوجد </option>
                    </select>
@@ -1002,7 +999,7 @@
 
              <label for="treatment_status" class="form-lable fw-bolder fs-3"> كيفية  توفير العلاج للأسرة </label>
                    <select name="treatment_status" id="" class="form-control text-end fs-3" wire:model="treatment_status">
-                      <option value="التامين الصحي"> التامين الصحي </option>
+                    <option value="التامين الصحي"> التامين الصحي </option>
                       <option value="غير منتظم"> غير منتظم </option>
                       <option value="نفقة الدولة"> نفقة الدولة </option>
                       <option value="تبرع"> تبرع </option>
@@ -1014,7 +1011,7 @@
 
              <label for="treatment_not_subscribed" class="form-lable fw-bolder fs-3"> هل هناك أحد من أفراد الأسرة غير مشترك في التأمين الصحي  </label>
                    <select name="treatment_not_subscribed" id="" class="form-control text-end fs-3" wire:model="treatment_not_subscribed">
-                      <option value="نعم"> نعم  </option>
+                    <option value="نعم"> نعم  </option>
                       <option value="لا"> لا  </option>
                    </select>
                     @error('treatment_not_subscribed')
@@ -1142,7 +1139,7 @@
              <h1 class="text-center mt-3"> الجانب التربوي </h1>
              <label for="problem_solve" class="form-lable fw-bolder fs-3"> طريقة العائل في  التعامل مع المشكلات  </label>
                    <select name="problem_solve" id="" class="form-control text-end fs-3" wire:model="problem_solve">
-                      <option value="الضرب"> الضرب </option>
+                    <option value="الضرب"> الضرب </option>
                       <option value="السباب"> السباب </option>
                       <option value="الحوار والمناقشة"> الحوار والمناقشة </option>
                       <option value="اخري"> اخري </option>
@@ -1153,7 +1150,7 @@
 
              <label for="child_reward" class="form-lable fw-bolder fs-3"> طريقة مكافأة الأبناء </label>
                    <select name="child_reward" id="" class="form-control text-end fs-3" wire:model="child_reward">
-                      <option value="تشجيع معنوي"> تشجيع معنوي </option>
+                    <option value="تشجيع معنوي"> تشجيع معنوي </option>
                       <option value="تشجيع مادي"> تشجيع مادي </option>
                       <option value="لاتكافئ"> لاتكافئ </option>
                       <option value="اخري"> اخري </option>
@@ -1164,7 +1161,7 @@
 
              <label for="help_problem" class="form-lable fw-bolder fs-3"> افراد يستعان بهم في حل المشكلات </label>
                    <select name="help_problem" id="" class="form-control text-end fs-3" wire:model="help_problem">
-                      <option value="الخال"> الخال </option>
+                    <option value="الخال"> الخال </option>
                       <option value="العم"> العم </option>
                       <option value="الجدة"> الجدة </option>
                       <option value="المنارة"> المنارة </option>
@@ -1176,8 +1173,8 @@
 
              <label for="problems" class="form-lable fw-bolder fs-3"> هل يوجد مشكلات مع الجيران او الاقارب او اخرين </label>
                    <select name="problems" id="" class="form-control text-end fs-3" wire:model="problems">
-                      <option value="نعم"> نعم </option>
-                      <option value="لا"> لا </option>
+                    <option value="نعم"> نعم </option>
+                    <option value="لا"> لا  </option>
                    </select>
                     @error('problems')
                     <p class="text-danger">{{ $message }}</p>
@@ -1185,7 +1182,7 @@
 
              <label for="what_problems" class="form-lable fw-bolder fs-3"> ماهي المشكلات </label>
                    <select name="what_problems" id="" class="form-control text-end fs-3" wire:model="what_problems">
-                      <option value="مناوشات"> مناوشات </option>
+                    <option value="مناوشات"> مناوشات </option>
                       <option value="اخري"> اخري </option>
                       <option value="لايوجد"> لايوجد </option>
                    </select>
@@ -1299,9 +1296,7 @@
                     <p class="text-danger">{{ $message }}</p>
                    @enderror
 
-             {{-- <input type="file" name="upload" accept="application/pdf"/> --}}
-
-             <button type="submit" class="cbtn btn-primary float-start w-auto"> إضافة </button>
+             <button type="submit" class="cbtn btn-primary float-start w-auto"> تعديل </button>
          </form>
        </div>
      </div>

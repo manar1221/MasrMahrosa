@@ -3,7 +3,7 @@
 
         <h1 class="cheading text-center p-3 text-light fw-bolder shadow" style="background-color: #8e44ad;"> المطلقات </h1>
         @if (Session::has('message'))
-            <div class="alert alert-success fw-blod fs-1" role="alert">{{Session::get('message')}}</div>
+            <div class="alert alert-success fw-blod fs-1" style="text-align: right;" role="alert">{{Session::get('message')}}</div>
         @endif
         <div class="cbox-container text-end vh-100" style="text-align: right;">
          <div class="card">

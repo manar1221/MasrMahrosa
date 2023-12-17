@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('period');
             $table->text('address');
+            $table->string('type')->default('أيتام');
 
             $table->enum('home_add',['مدينة','عشوائية'])->default('عشوائية');
             $table->enum('home_status',['ايجار جديد','ايجار قديم','بيت العائلة'])->default('ايجار جديد');
@@ -92,10 +93,9 @@ return new class extends Migration
 
             $table->enum('breadwinner',['الام','الجدة','الخالة','العمة','اخرين'])->default('الام');
 
-            $table->enum('mother_status',['مطلقة','هجر','متزوجة','اخري'])->default('مطلقة');
+            $table->enum('mother_status',['مطلقة','ارملة','هجر','متزوجة','اخري'])->default('مطلقة');
 
             $table->date('divorce_date')->nullable();
-
 
             $table->enum('edu_level',['مؤهل عالي','شهاده الثانويه العام','مؤهل متوسط','شهادة محو امية','امية'])->default('امية');
 
@@ -141,7 +141,7 @@ return new class extends Migration
 
             $table->enum('project_want',['نعم','لا'])->default('نعم');
 
-            $table->enum('project_want_type',['بقالة','الخياطة','تقسيط','ماكولات','اخري'])->default('نعم');
+            $table->enum('project_want_type',['بقالة','الخياطة','تقسيط','ماكولات','اخري'])->default('بقالة');
 
             $table->timestamps();
         });

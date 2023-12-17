@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('phone');
             $table->string('period');
             $table->text('address');
+            $table->string('type')->default('ارامل');
 
             $table->enum('home_add',['مدينة','عشوائية'])->default('عشوائية');
             $table->enum('home_status',['ايجار جديد','ايجار قديم','بيت العائلة'])->default('ايجار جديد');
@@ -141,7 +142,7 @@ return new class extends Migration
 
             $table->enum('project_want',['نعم','لا'])->default('نعم');
 
-            $table->enum('project_want_type',['بقالة','الخياطة','تقسيط','ماكولات','اخري'])->default('نعم');
+            $table->enum('project_want_type',['بقالة','الخياطة','تقسيط','ماكولات','اخري'])->default('بقالة');
 
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ class DeforsedComponent extends Component
 
         if ($deforse_case) {
         $deforse_case->delete();
-        session()->flash('message','Case has been deleted!');
+        session()->flash('message','تم حذف الحالة بنجاح');
         }
         else {
             // Handle the case where the record doesn't exist

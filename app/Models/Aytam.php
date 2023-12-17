@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Aytam extends Model
 {
     use HasFactory;
+    public function aytamfamily()
+    {
+        return $this->hasMany(AytamFamily::class, 'aytam_id');
+    }
 }

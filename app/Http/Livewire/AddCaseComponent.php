@@ -459,7 +459,7 @@ class AddCaseComponent extends Component
         //     }
         $case->save();
         $case->fmaily()->saveMany([$family]);
-        session()->flash('message','Case has been added!');
+        session()->flash('message','تم اضافة الحالة بنجاح');
         return redirect()->route('deforsed');
 
     }

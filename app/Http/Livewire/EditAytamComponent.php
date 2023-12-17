@@ -1,17 +1,16 @@
 <?php
 
 namespace App\Http\Livewire;
-
+use App\Models\Aytam;
+use App\Models\AytamFamily;
 use Livewire\Component;
 use Livewire\WithFileUploads;
-use App\Models\Deforsed;
-use App\Models\Fmaily;
 
-class EditCaseComponent extends Component
+class EditAytamComponent extends Component
 {
     use WithFileUploads;
 
-    public $deforsecase_id;
+    public $aytamcase_id;
     public $case_id;
     public $name;
     public $national_id;
@@ -203,10 +202,10 @@ class EditCaseComponent extends Component
     public $project_want = 'نعم';
     public $project_want_type = 'بقالة';
 
-    public function mount($deforsecase_id)
+    public function mount($aytamcase_id)
     {
-        $case = Deforsed::find($deforsecase_id);
-        $this->deforsecase_id =  $case->id ;
+        $case = Aytam::find($aytamcase_id);
+        $this->aytamcase_id =  $case->id ;
         $this->case_id =  $case->case_id ;
         $this->name =  $case->name ;
         $this->national_id = $case->national_id  ;
@@ -320,7 +319,7 @@ class EditCaseComponent extends Component
         $this->project_want = $case->project_want  ;
         $this->project_want_type = $case->project_want_type ;
 
-        $family = Fmaily::find($deforsecase_id);
+        $family = AytamFamily::find($aytamcase_id);
         if(!($this->Resident_name1 && $this->Resident_age1 && $this->Resident_relate1 && $this->Resident_job1))
         {
             $this->Resident_name1 = $family->Resident_name1  ;
@@ -451,7 +450,7 @@ class EditCaseComponent extends Component
             'address' => 'required',
             'mother_status' => 'required',
         ]);
-        $case= Deforsed::find($this->deforsecase_id);
+        $case= Aytam::find($this->aytamcase_id);
         $case->case_id =$this->case_id ;
         $case->name =$this->name ;
         $case->national_id =$this->national_id ;
@@ -565,7 +564,7 @@ class EditCaseComponent extends Component
         $case->project_want =$this->project_want ;
         $case->project_want_type =$this->project_want_type ;
 
-        $family = Fmaily::find($this->deforsecase_id);
+        $family = AytamFamily::find($this->aytamcase_id);
         $family->case_id =$case->case_id ;
         if(!($family->Resident_name1 && $family->Resident_age1 && $family->Resident_relate1 && $family->Resident_job1))
         {
@@ -686,13 +685,13 @@ class EditCaseComponent extends Component
         }
 
         $case->save();
-        $case->fmaily()->saveMany([$family]);
+        $case->aytamfamily()->saveMany([$family]);
         session()->flash('message','تم تعديل الحالة بنجاح');
-        return redirect()->route('deforsed');
+        return redirect()->route('aytam');
     }
 
     public function render()
     {
-        return view('livewire.edit-case-component');
+        return view('livewire.edit-aytam-component');
     }
 }

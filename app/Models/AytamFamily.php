@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Araml extends Model
+class AytamFamily extends Model
 {
     use HasFactory;
-    public function aramlfamily()
+    public function aytams()
     {
-        return $this->hasMany(AramlFamily::class, 'araml_id');
+        return $this->belongsTo(Aytam::class);
     }
 }

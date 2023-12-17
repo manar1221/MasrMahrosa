@@ -1299,8 +1299,6 @@
                     <p class="text-danger">{{ $message }}</p>
                    @enderror
 
-             {{-- <input type="file" name="upload" accept="application/pdf"/> --}}
-
              <button type="submit" class="cbtn btn-primary float-start w-auto"> إضافة </button>
          </form>
        </div>

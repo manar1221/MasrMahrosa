@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Araml extends Model
+class AramlFamily extends Model
 {
     use HasFactory;
-    public function aramlfamily()
+    public function aramls()
     {
-        return $this->hasMany(AramlFamily::class, 'araml_id');
+        return $this->belongsTo(Araml::class);
     }
 }

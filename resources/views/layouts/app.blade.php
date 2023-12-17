@@ -37,7 +37,11 @@
   <body>
     <header class="cheader">
       <section class="cflex">
-        <a href="{{route('home.index')}}" class="clogo">Masr AL-Mahrosa</a>
+        @auth
+            <a href="{{route('home.index')}}" class="clogo">Masr AL-Mahrosa</a>
+        @else
+            <a href="{{route('login')}}" class="clogo">Masr AL-Mahrosa</a>
+        @endif
 
         @livewire('header-search-component')
 
@@ -76,26 +80,47 @@
 
       </section>
     </header>
+    @auth
+        <div class="cside-bar">
+        <div id="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
 
+        <div class="cprofile">
+            <img src="{{asset('assets/images/default-user.png')}}" class="cimage" alt="" />
+            <h3 class="cname">{{Auth::user()->name}}</h3>
+        </div>
+
+        <nav class="cnavbar">
+            <a href="/"
+            ><i class="fas fa-home"></i><span> الرئيسية </span></a
+            >
+            <a href="{{route('cases')}}"
+            ><i class="fas fa-chalkboard-user"></i><span> الحالات </span></a
+            >
+        </nav>
+        </div>
+    @else
     <div class="cside-bar">
-      <div id="close-btn">
-        <i class="fas fa-times"></i>
-      </div>
+        <div id="close-btn">
+          <i class="fas fa-times"></i>
+        </div>
 
-      <div class="cprofile">
-        <img src="{{asset('assets/images/default-user.png')}}" class="cimage" alt="" />
-        <h3 class="cname">User</h3>
-      </div>
+        <div class="cprofile">
+          <img src="{{asset('assets/images/default-user.png')}}" class="cimage" alt="" />
+          <h3 class="cname">User</h3>
+        </div>
 
-      <nav class="cnavbar">
-        <a href="index.html"
-          ><i class="fas fa-home"></i><span> الرئيسية </span></a
-        >
-        <a href="{{route('cases')}}"
-          ><i class="fas fa-chalkboard-user"></i><span> الحالات </span></a
-        >
-      </nav>
-    </div>
+        <nav class="cnavbar">
+          <a href="{{route('login')}}"
+            ><i class="fas fa-home"></i><span> الرئيسية </span></a
+          >
+          <a href="{{route('login')}}"
+            ><i class="fas fa-chalkboard-user"></i><span> الحالات </span></a
+          >
+        </nav>
+      </div>
+    @endif
 
     {{$slot}}
 
