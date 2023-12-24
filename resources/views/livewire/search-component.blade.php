@@ -24,11 +24,11 @@
                     <tr>
                         <th scope="col">  حذف / عرض </th>
                         <th scope="col"> الفئة </th>
-                       <th scope="col"> السن </th>
-                       <th scope="col"> اسم الحالة </th>
-                       <th scope="col"> كود الحالة </th>
-                       <th scope="col">#</th>
-                     </tr>
+                        <th scope="col"> السن </th>
+                        <th scope="col"> اسم الحالة </th>
+                        <th scope="col"> كود الحالة </th>
+                        <th scope="col">#</th>
+                    </tr>
                  </thead>
                  <tbody>
                     @php
@@ -45,7 +45,7 @@
                         <td> {{$case->age}} </td>
                         <td> {{$case->name}} </td>
                         <td> {{$case->case_id}} </td>
-                       <th scope="row"> {{++$i}} </th>
+                        <th scope="row"> {{++$i}} </th>
                      </tr>
                     @endforeach
                  </tbody>
